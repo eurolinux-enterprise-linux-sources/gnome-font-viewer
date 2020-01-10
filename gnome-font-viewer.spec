@@ -1,7 +1,7 @@
 Name:           gnome-font-viewer
 Version:        3.14.1
 %global         release_version %(echo %{version} | awk -F. '{print $1"."$2}')
-Release:        2%{?dist}
+Release:        4%{?dist}
 Summary:        Utility for previewing fonts for GNOME
 
 Group:          Applications/System
@@ -12,6 +12,7 @@ Source0:        http://ftp.gnome.org/pub/GNOME/sources/gnome-font-viewer/%{relea
 Patch0:         mistranslation.patch
 # upstream fix
 Patch1:         0001-Add-help-and-version.patch
+Patch2:         translations.patch
 
 BuildRequires:  gnome-desktop3-devel
 BuildRequires:  gtk3-devel
@@ -27,6 +28,7 @@ name, style, type, size, version and copyright of the font.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %configure --disable-silent-rules
@@ -35,6 +37,10 @@ make %{?_smp_mflags}
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
+
+# for backward compatibility with user defined file associations
+cp $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.font-viewer.desktop $RPM_BUILD_ROOT%{_datadir}/applications/gnome-font-viewer.desktop
+echo NoDisplay=true >> $RPM_BUILD_ROOT%{_datadir}/applications/gnome-font-viewer.desktop
 
 %find_lang %{name} --with-gnome
 
@@ -53,12 +59,20 @@ update-desktop-database &> /dev/null || :
 %{_bindir}/%{name}
 %{_bindir}/gnome-thumbnail-font
 %{_datadir}/appdata/org.gnome.font-viewer.appdata.xml
-%{_datadir}/applications/org.gnome.font-viewer.desktop
+%{_datadir}/applications/*.desktop
 %{_datadir}/dbus-1/services/org.gnome.font-viewer.service
 %{_datadir}/thumbnailers/%{name}.thumbnailer
 
 
 %changelog
+* Wed Jun 29 2016 Matthias Clasen <mclasen@redhat.com> - 3.14.1-4
+- Update translations
+  Resolves: #1304286
+
+* Fri Jun 26 2015 Ray Strode <rstrode@redhat.com> - 3.14.1-3
+- Add backward compat desktop file for user mime associations
+  Related: #1174572 1235413
+
 * Thu May 21 2015 Matthias Clasen <mclasen@redhat.com> - 3.14.1-2
 - Rebuild against new gnome-desktop3
 Related: #1174572
