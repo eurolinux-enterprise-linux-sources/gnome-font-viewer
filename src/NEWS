@@ -1,0 +1,176 @@
+GNOME Font Viewer - 3.14.1
+-------------------------------------------------------------------------------
+
+ • Fix a crash dure to an uninitialized variable
+ • Translation updates
+
+GNOME Font Viewer - 3.14.0
+-------------------------------------------------------------------------------
+
+ • Add X-GNOME-Utilities category to desktop file
+ • Translation updates
+
+GNOME Font Viewer - 3.13.90
+-------------------------------------------------------------------------------
+
+ • Make DBus activatable
+ • Create cairo surfaces always in the main thread (Rui Matos)
+ • Show regular close button instead of Cancel in info dialog (Yosef Or Boczko)
+ • Add a title to info dialog (Yosef Or Boczko)
+ • Translation updates
+
+
+GNOME Font Viewer - 3.12.0
+-------------------------------------------------------------------------------
+
+ • Add support for rendering complex scripts (Khaled Hosny)
+ • Fix header bar item positions (Yosef Or Boczko)
+ • Use header bar in the info dialog
+ • Standardize app menu Help/About/Quit (Michael Catanzaro)
+
+GNOME Font Viewer - 3.10.0
+-------------------------------------------------------------------------------
+
+ • Translation updates
+
+GNOME Font Viewer - 3.9.90
+-------------------------------------------------------------------------------
+
+ • Fix back button direction for RTL locales (Yosef Or Boczko)
+ • Port to GtkStack and GtkHeaderBar (Yosef Or Boczko)
+ • Support Hi-Dpi displays
+ • Make sure not to append extra header buttons when loading a file
+ • Translation updates
+
+GNOME Font Viewer - 3.8.0
+-------------------------------------------------------------------------------
+
+ • Translation updates
+
+GNOME Font Viewer - 3.7.91
+-------------------------------------------------------------------------------
+
+ • Port to use GdStack and GdHeaderBar
+ • Translation updates
+
+
+GNOME Font Viewer - 3.7.5
+-------------------------------------------------------------------------------
+
+ • Use a better padding for the font preview
+ • Translation updates
+
+GNOME Font Viewer - 3.7.4
+-------------------------------------------------------------------------------
+
+ • Don't paint a white background below font thumbnails
+ • Add keywords to the desktop file
+ • Don't call g_type_init(), depends on GLib 2.35.1
+ • Translation updates
+
+GNOME Font Viewer - 3.7.3
+-------------------------------------------------------------------------------
+
+ • Show an error dialog when we fail to load a font file
+ • Fix a crasher when opening a non-existing file from the command line
+ • Translation updates
+
+GNOME Font Viewer - 3.6.2
+-------------------------------------------------------------------------------
+
+ • Fix Install button not refreshing correctly when opening an installed font
+ • Fix a crasher when installing a new font
+ • Translation updates
+
+GNOME Font Viewer - 3.6.1
+-------------------------------------------------------------------------------
+
+ • Fix application name showing in dialog title
+ • Fix a possible crasher when updating the font list
+ • Translation updates
+
+GNOME Font Viewer - 3.6.0
+-------------------------------------------------------------------------------
+
+ • Translation updates
+
+GNOME Font Viewer - 3.5.92
+-------------------------------------------------------------------------------
+
+ • Translation updates
+
+GNOME Font Viewer - 3.5.91
+-------------------------------------------------------------------------------
+
+ • Use the libgd submodule for GdMainToolbar
+ • Translation updates
+
+GNOME Font Viewer - 3.5.90
+-------------------------------------------------------------------------------
+
+ • Improve performance when loading the application's overview
+ • Make loading of the overview model completely asynchronous
+ • Translation updates
+
+GNOME Font Viewer - 3.5.4
+-------------------------------------------------------------------------------
+
+ • Fix a compiler warning
+ • Translation updates
+
+GNOME Font Viewer - 3.5.3
+-------------------------------------------------------------------------------
+
+ • Refactor thumbnailing code to use g_io_scheduler_push_job() for robustness
+ • Translation updates
+
+GNOME Font Viewer - 3.5.2
+-------------------------------------------------------------------------------
+
+ • Fall back to C locale when constructing the sample string before picking an
+   entirely random-glyph string
+ • Flip font widget orientation for RTL locales
+ • Always pick a valid size for fixed-size fonts
+ • Fix missing string compression before display for PS fonts
+ • Improve string sanitizing before display for information fetched out of the
+   font files
+ • Monitor fontconfig directories for new fonts
+ • Support fontconfig XDG_DATA_HOME directory for font install, if present
+ • Set a fallback icon when thumbnails are not available
+ • Force black on white for font text display
+ • Quit with Ctrl+Q
+ • Use GResource for UI files
+ • Correctly update the install button when install completes
+
+GNOME Font Viewer - 3.5.1
+-------------------------------------------------------------------------------
+
+ • Rewrite the user interface using a GNOME 3 style
+ • Implement a gallery mode for all the fonts on the system
+ • Add an application menu and an about dialog
+ • Make "Install" button insensitive if the font is already installed
+ • Port the thumbnailer to cairo drawing
+ • Translation updates
+
+GNOME Font Viewer - 3.4.0
+-------------------------------------------------------------------------------
+
+ • Translation updates
+
+GNOME Font Viewer - 3.3.92
+-------------------------------------------------------------------------------
+
+ • Fix unused variables GCC warnings
+ • Translation updates
+
+GNOME Font Viewer - 3.3.2.1
+-------------------------------------------------------------------------------
+
+ • Depend on GLib 2.31.0
+ • Don't use deprecated GLib/GTK methods
+
+GNOME Font Viewer - 3.3.2
+-------------------------------------------------------------------------------
+
+ • First unstable release.
+ • First release after the GNOME Utilities split.

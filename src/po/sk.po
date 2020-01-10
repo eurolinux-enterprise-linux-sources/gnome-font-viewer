@@ -1,0 +1,148 @@
+# Slovak translation for gnome-font-viewer.
+# Copyright (C) 2000-2003, 2005, 2008-2012 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-font-viewer package.
+# Stanislav Višňovský <visnovsky@nenya.ms.mff.cuni.cz>, 2000-2002.
+# Stanislav Višňovský <visnovsky@kde.org>, 2003.
+# Stanislav Višňovský <visnov@suse.cz>, 2003.
+# Ivan Noris <vix@vazka.sk>, 2005.
+# Pavol Klačanský <pavol@klacansky.com>, 2008-2011.
+# Dušan Kazik <prescott66@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-font-viewer\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"font-viewer&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-03-27 08:07+0000\n"
+"PO-Revision-Date: 2014-03-27 20:18+0100\n"
+"Last-Translator: Peter Mráz <etkinator@gmail.com>\n"
+"Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:1
+msgid ""
+"GNOME Font Viewer shows you the fonts installed on your computer for your "
+"use as thumbnails. Selecting any thumbnails shows the full view of how the "
+"font would look under various sizes."
+msgstr ""
+"Prehliadač písem pre prostredie GNOME v podobe miniatúr zobrazuje písma "
+"nainštalované v počítači, ktoré je možné použiť. Po vybratí niektorej "
+"miniatúry sa zobrazí celistvý náhľad vzhľadu písma v rôznych veľkostiach."
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:2
+msgid ""
+"GNOME Font Viewer also supports installing new font files downloaded in the ."
+"ttf and other formats. Fonts may be installed only for your use or made "
+"available to all users on the computer."
+msgstr ""
+"Prehliadač písiem pre prostredie GNOME podporuje inštalovanie nových písiem "
+"z prevzatých súborov vo formáte .ttf aj v iných formátoch. Písma môžu byť "
+"nainštalované iba pre jedného používateľa alebo všetkých používateľov na "
+"počítači."
+
+#: ../src/font-thumbnailer.c:189
+msgid "Text to thumbnail (default: Aa)"
+msgstr "Text do miniatúry (predvolený: Aa)"
+
+#: ../src/font-thumbnailer.c:189
+msgid "TEXT"
+msgstr "TEXT"
+
+#: ../src/font-thumbnailer.c:191
+msgid "Thumbnail size (default: 128)"
+msgstr "Veľkosť miniatúry (predvolená: 128)"
+
+#: ../src/font-thumbnailer.c:191
+msgid "SIZE"
+msgstr "VEĽKOSŤ"
+
+#: ../src/font-thumbnailer.c:193
+msgid "FONT-FILE OUTPUT-FILE"
+msgstr "SÚBOR-S-PÍSMOM VÝSTUPNÝ-SÚBOR"
+
+#: ../src/font-view-app-menu.ui.h:1
+msgid "About"
+msgstr "O programe"
+
+#: ../src/font-view-app-menu.ui.h:2
+msgid "Quit"
+msgstr "Ukončiť"
+
+#: ../src/font-view.c:176
+msgid "Name"
+msgstr "Názov"
+
+#: ../src/font-view.c:179
+msgid "Style"
+msgstr "Štýl"
+
+#: ../src/font-view.c:189
+msgid "Type"
+msgstr "Typ"
+
+#: ../src/font-view.c:234 ../src/font-view.c:253
+msgid "Version"
+msgstr "Verzia"
+
+#: ../src/font-view.c:239 ../src/font-view.c:259
+msgid "Copyright"
+msgstr "Autorské právo"
+
+#: ../src/font-view.c:244
+msgid "Description"
+msgstr "Popis"
+
+#: ../src/font-view.c:272
+msgid "Install Failed"
+msgstr "Inštalácia zlyhala"
+
+#: ../src/font-view.c:278
+msgid "Installed"
+msgstr "Nainštalované"
+
+#: ../src/font-view.c:281 ../src/font-view.c:525
+msgid "Install"
+msgstr "Nainštalovať"
+
+#: ../src/font-view.c:414
+msgid "This font could not be displayed."
+msgstr "Toto písmo sa nepodarilo zobraziť."
+
+#: ../src/font-view.c:478 ../src/font-view.c:536
+msgid "Info"
+msgstr "Informácie"
+
+#: ../src/font-view.c:553
+msgid "Back"
+msgstr "Späť"
+
+#: ../src/font-view.c:643
+msgid "All Fonts"
+msgstr "Všetky písma"
+
+#: ../src/font-view.c:761 ../src/gnome-font-viewer.desktop.in.in.h:1
+msgid "Font Viewer"
+msgstr "Prehliadač písiem"
+
+#: ../src/font-view.c:762 ../src/gnome-font-viewer.desktop.in.in.h:2
+msgid "View fonts on your system"
+msgstr "Zobrazenie písiem vo vašom systéme"
+
+#: ../src/font-view.c:764
+msgid "translator-credits"
+msgstr "Dušan Kazik <prescott66@gmail.com>"
+
+#: ../src/gnome-font-viewer.desktop.in.in.h:3
+msgid "fonts;fontface;"
+msgstr "písmo;písma;rodina;"
+
+#~ msgid "About Font Viewer"
+#~ msgstr "O programe Prehliadač písiem"
+
+#~ msgid "_Close"
+#~ msgstr "_Zavrieť"

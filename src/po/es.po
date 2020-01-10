@@ -1,0 +1,168 @@
+# translation of gnome-utils.master.po to Español
+# Carlos Perelló Marín <carlos@gnome-db.org>, 2001.
+# QA - Germán Poo Caamaño <gpoo@ubiobio.cl>, 2002.
+# Pablo Gonzalo del Campo <pablodc@bigfoot.com>,2002-2003.
+# Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2003, 2004, 2005, 2006.
+# gnome-utils translation into spanish
+# Copyright © 1998-2003, 2006, 2007, 2008 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-utils package.
+# Miguel de Icaza <miguel@metropolis.nuclecu.unam.mx> 1998.
+# Pablo Saratxaga <srtxg@chanae.alphanet.ch> 1999.
+# Manuel de Vega Barreiro <barreiro@arrakis.es> 2000-2001.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-utils.master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"font-viewer&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-01-22 01:16+0000\n"
+"PO-Revision-Date: 2014-01-22 11:06+0100\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.5\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:1
+msgid ""
+"GNOME Font Viewer shows you the fonts installed on your computer for your "
+"use as thumbnails. Selecting any thumbnails shows the full view of how the "
+"font would look under various sizes."
+msgstr ""
+"El visor de tipografías de GNOME muestra las tipografías instaladas en el "
+"equipo como miniaturas. Al seleccionar cualquiera de ellas se muestra una "
+"vista completa de cómo queda la tipografía con varios tamaños."
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:2
+msgid ""
+"GNOME Font Viewer also supports installing new font files downloaded in the ."
+"ttf and other formats. Fonts may be installed only for your use or made "
+"available to all users on the computer."
+msgstr ""
+"El visor de tipografías de GNOME también soporta instalar nuevas tipografías "
+"descargadas como archivos .ttf u otros formatos. Las tipografías se puede "
+"instalar para su uso personal o para que estén disponibles para todos los "
+"usuarios del sistema."
+
+#: ../src/font-thumbnailer.c:189
+msgid "Text to thumbnail (default: Aa)"
+msgstr "Texto a miniaturizar (predeterminado: Aa)"
+
+#: ../src/font-thumbnailer.c:189
+msgid "TEXT"
+msgstr "TEXTO"
+
+#: ../src/font-thumbnailer.c:191
+msgid "Thumbnail size (default: 128)"
+msgstr "Tamaño de la miniatura (predeterminado: 128)"
+
+#: ../src/font-thumbnailer.c:191
+msgid "SIZE"
+msgstr "TAMAÑO"
+
+#: ../src/font-thumbnailer.c:193
+msgid "FONT-FILE OUTPUT-FILE"
+msgstr "ARCHIVO-DE-TIPOGRAFÍA ARCHIVO-DE-SALIDA"
+
+#: ../src/font-view-app-menu.ui.h:1
+msgid "About"
+msgstr "Acerca de"
+
+#: ../src/font-view-app-menu.ui.h:2
+msgid "Quit"
+msgstr "Salir"
+
+#: ../src/font-view.c:176
+msgid "Name"
+msgstr "Nombre"
+
+#: ../src/font-view.c:179
+msgid "Style"
+msgstr "Estilo"
+
+#: ../src/font-view.c:189
+msgid "Type"
+msgstr "Tipo"
+
+#: ../src/font-view.c:234 ../src/font-view.c:253
+msgid "Version"
+msgstr "Version"
+
+#: ../src/font-view.c:239 ../src/font-view.c:259
+msgid "Copyright"
+msgstr "Copyright"
+
+#: ../src/font-view.c:244
+msgid "Description"
+msgstr "Descripción"
+
+#: ../src/font-view.c:272
+msgid "Install Failed"
+msgstr "Falló la instalación"
+
+#: ../src/font-view.c:278
+msgid "Installed"
+msgstr "Instalado"
+
+#: ../src/font-view.c:281 ../src/font-view.c:522
+msgid "Install"
+msgstr "Instalar"
+
+#: ../src/font-view.c:414
+msgid "This font could not be displayed."
+msgstr "No se pudo mostrar esta tipografía."
+
+#: ../src/font-view.c:479
+msgid "_Close"
+msgstr "_Cerrar"
+
+#: ../src/font-view.c:533
+msgid "Info"
+msgstr "Información"
+
+#: ../src/font-view.c:550
+msgid "Back"
+msgstr "Atrás"
+
+#: ../src/font-view.c:640
+msgid "All Fonts"
+msgstr "Todas las tipografías"
+
+#: ../src/font-view.c:758 ../src/gnome-font-viewer.desktop.in.in.h:1
+msgid "Font Viewer"
+msgstr "Visor de tipografías"
+
+#: ../src/font-view.c:759 ../src/gnome-font-viewer.desktop.in.in.h:2
+msgid "View fonts on your system"
+msgstr "Ver las tipografías de su sistema"
+
+#: ../src/font-view.c:761
+msgid "translator-credits"
+msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2012"
+
+#: ../src/gnome-font-viewer.desktop.in.in.h:3
+msgid "fonts;fontface;"
+msgstr "tipografía;letra;tipo;"
+
+#~ msgid "About Font Viewer"
+#~ msgstr "Acerca del Visor de tipografías"
+
+#~ msgid "Done"
+#~ msgstr "Hecho"
+
+#~ msgid "Font size (default: 64)"
+#~ msgstr "Tamaño de la tipografía (predeterminado: 64)"
+
+#~ msgid "Size:"
+#~ msgstr "Tamaño:"
+
+#~ msgid "Usage: %s fontfile\n"
+#~ msgstr "Uso: %s archivo de tipografía\n"
+
+#~ msgid "Preview fonts"
+#~ msgstr "Vista previa de las tipografías"

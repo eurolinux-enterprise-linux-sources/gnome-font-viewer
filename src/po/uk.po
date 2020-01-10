@@ -1,0 +1,160 @@
+# Ukrainian translation of the gnome-utils module.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Yuri Syrota <rasta@renome.rovno.ua>, 1999.
+# Maxim Dziumanenko <dziumanenko@gmail.com>, 2002-2010
+# wanderlust <wanderlust@ukr.net>, 2009.
+# int_ua <xintx.ua@gmail.com>, 2010.
+# Korostil Daniel <ted.korostiled@gmail.com>, 2011.
+# Re. <ted.korostiled@gmail.com>, 2012.
+# Daniel Korostil <ted.korostiled@gmail.com>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-utils\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"font-viewer&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-02-10 07:47+0000\n"
+"PO-Revision-Date: 2014-02-10 12:30+0300\n"
+"Last-Translator: Daniel Korostil <ted.korostiled@gmail.com>\n"
+"Language-Team: linux.org.ua\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:1
+msgid ""
+"GNOME Font Viewer shows you the fonts installed on your computer for your "
+"use as thumbnails. Selecting any thumbnails shows the full view of how the "
+"font would look under various sizes."
+msgstr ""
+"Переглядач шрифтів показує встановлені шрифти у мініатюрі. Вибирання "
+"мініатюр показує, як шрифт виглядає в різних розмірах."
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:2
+msgid ""
+"GNOME Font Viewer also supports installing new font files downloaded in the ."
+"ttf and other formats. Fonts may be installed only for your use or made "
+"available to all users on the computer."
+msgstr ""
+"Переглядач шрифтів також підтримує встановлення файлів нових шрифтів, які "
+"звантажено в «.ttf» або інших форматах. Шрифти можна встановити тільки для "
+"себе або для всіх користувачів системи."
+
+#: ../src/font-thumbnailer.c:189
+msgid "Text to thumbnail (default: Aa)"
+msgstr "Текст до мініатюри (типово: Aa)"
+
+#: ../src/font-thumbnailer.c:189
+msgid "TEXT"
+msgstr "ТЕКСТ"
+
+#: ../src/font-thumbnailer.c:191
+msgid "Thumbnail size (default: 128)"
+msgstr "Розмір мініатюри (типово: 128)"
+
+#: ../src/font-thumbnailer.c:191
+msgid "SIZE"
+msgstr "РОЗМІР"
+
+#: ../src/font-thumbnailer.c:193
+msgid "FONT-FILE OUTPUT-FILE"
+msgstr "ФАЙЛ-ШРИФТУ ФАЙЛ-ВИВОДУ"
+
+#: ../src/font-view-app-menu.ui.h:1
+msgid "About"
+msgstr "Про програму"
+
+#: ../src/font-view-app-menu.ui.h:2
+msgid "Quit"
+msgstr "Вийти"
+
+#: ../src/font-view.c:176
+msgid "Name"
+msgstr "Назва"
+
+#: ../src/font-view.c:179
+msgid "Style"
+msgstr "Стиль"
+
+#: ../src/font-view.c:189
+msgid "Type"
+msgstr "Тип"
+
+#: ../src/font-view.c:234 ../src/font-view.c:253
+msgid "Version"
+msgstr "Версія"
+
+#: ../src/font-view.c:239 ../src/font-view.c:259
+msgid "Copyright"
+msgstr "Авторські права"
+
+#: ../src/font-view.c:244
+msgid "Description"
+msgstr "Опис"
+
+#: ../src/font-view.c:272
+msgid "Install Failed"
+msgstr "Помилка при встановленні"
+
+#: ../src/font-view.c:278
+msgid "Installed"
+msgstr "Встановлено"
+
+#: ../src/font-view.c:281 ../src/font-view.c:522
+msgid "Install"
+msgstr "Встановити"
+
+#: ../src/font-view.c:414
+msgid "This font could not be displayed."
+msgstr "Цей шрифт неможливо показати."
+
+#: ../src/font-view.c:479
+msgid "_Close"
+msgstr "_Закрити"
+
+#: ../src/font-view.c:533
+msgid "Info"
+msgstr "Інформація"
+
+#: ../src/font-view.c:550
+msgid "Back"
+msgstr "Назад"
+
+#: ../src/font-view.c:640
+msgid "All Fonts"
+msgstr "_Усі шрифти"
+
+#: ../src/font-view.c:758 ../src/gnome-font-viewer.desktop.in.in.h:1
+msgid "Font Viewer"
+msgstr "Перегляд шрифтів"
+
+#: ../src/font-view.c:759 ../src/gnome-font-viewer.desktop.in.in.h:2
+msgid "View fonts on your system"
+msgstr "Переглянути шрифти на вашій системі"
+
+#: ../src/font-view.c:761
+msgid "translator-credits"
+msgstr "Daniel Korostil <ted.korostiled@gmail.com>"
+
+#: ../src/gnome-font-viewer.desktop.in.in.h:3
+msgid "fonts;fontface;"
+msgstr "шрифт;текст;"
+
+#~ msgid "About Font Viewer"
+#~ msgstr "Про перегляд шрифтів"
+
+#~ msgid "Font size (default: 64)"
+#~ msgstr "Розмір шрифту (типово: 64)"
+
+#~ msgid "Size:"
+#~ msgstr "Розмір:"
+
+#~ msgid "Usage: %s fontfile\n"
+#~ msgstr "Використання: %s файлшрифту\n"
+
+#~ msgid "Preview fonts"
+#~ msgstr "Попередній перегляд шрифтів"

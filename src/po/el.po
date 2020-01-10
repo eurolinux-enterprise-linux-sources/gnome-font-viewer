@@ -1,0 +1,194 @@
+# translation of gnome-utils.gnome-2-26.po to Ελληνικά
+# gnome-utils Greek translation.
+# Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2008, 2009 Free Software Foundation, Inc.
+# 385 translated messages, 127 fuzzy translations, 188 untranslated messages.
+# Finished! now, 700 messages fully translated.
+# simos: 780 messages, visual verification, 14Feb2001 (sgpbea).
+# simos: 483 messages, 30Oct2002, translation review.
+# kostas: 483 messages, 30Oct2002, completed translation for GNOME2.
+# kostas: 468 messages, unfuzzy 3, 07Jan2003, one more update.
+# Spiros Papadimitriou <spapadim+@cs.cmu.edu>, 2000.
+# Simos Xenitellis <simos@hellug.gr>, 2000, 2001, 2002.
+# Nikos Charonitakis <frolix68@yahoo.gr>, 2003, 2004.
+# Kostas Papadimas <pkst@gnome.org>, 2002, 2003, 2004, 2005, 2006, 2008, 2012.
+# Jennie Petoumenou <epetoumenou@gmail.com>, 2009.
+# Fotis Tsamis <ftsamis@gmail.com>, 2009.
+# Sterios Prosiniklis <steriosprosiniklis@gmail.com>, 2009.
+# spyros:
+# translated around 500 messages, in 2000.
+# simos:
+# updated this:
+# One more update, now 701 total messages.
+# kostas: 26 Dec2002, updated translation for Gnome 2.1x
+# kostas: 03Aug2003, update translation for 2.4
+# Nikos: 13Oct2003, review translation for 2.4
+# Nikos: 17Nov2003, update translation for 2.6
+# kostas: 25Jan2004, updates and fixes
+# Nikos: 19Feb2004 update translation
+# Kostas: 14Jan2006 update for 2.14
+# Simos Xenitellis <simos.lists@googlemail.com>, 2010.
+# Tom Tryfonidis <tomtryf@gmail.com>, 2012.
+# Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013, 2014.
+# Efstathios Iosifidis <iosifidis@opensuse.org>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-utils.gnome-2-26\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"font-viewer&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-07-07 06:50+0000\n"
+"PO-Revision-Date: 2014-07-08 11:37+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
+"Language-Team: team@lists.gnome.gr\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:1
+msgid ""
+"GNOME Font Viewer shows you the fonts installed on your computer for your "
+"use as thumbnails. Selecting any thumbnails shows the full view of how the "
+"font would look under various sizes."
+msgstr ""
+"Η εφαρμογή Προβολή γραμματοσειρών GNOME σας δείχνει τις γραμματοσειρές που "
+"είναι εγκατεστημένες στον υπολογιστή σας για δική σας χρήση, σε μορφή "
+"μικρογραφιών. Επιλέγοντας μια μικρογραφία, θα σας εμφανίσει σε πλήρη προβολή "
+"πως θα έδειχνε αυτή η γραμματοσειρά σε διάφορα μεγέθη."
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:2
+msgid ""
+"GNOME Font Viewer also supports installing new font files downloaded in the ."
+"ttf and other formats. Fonts may be installed only for your use or made "
+"available to all users on the computer."
+msgstr ""
+"Η εφαρμογή Προβολή γραμματοσειρών GNOME υποστηρίζει επίσης την εγκατάσταση "
+"αρχείων για νέες γραμματοσειρές που λήφθηκαν σε μορφή .ttf ή σε άλλα "
+"πρότυπα. Οι γραμματοσειρές μπορούν να εγκατασταθούν είτε αποκλειστικά για "
+"δική σας χρήση, είτε να είναι διαθέσιμες για όλους τους χρήστες στον "
+"υπολογιστή σας."
+
+#: ../src/font-thumbnailer.c:189
+msgid "Text to thumbnail (default: Aa)"
+msgstr "Κείμενο σε μικρογραφία (προεπιλεγμένο: Αα)"
+
+#: ../src/font-thumbnailer.c:189
+msgid "TEXT"
+msgstr "ΚΕΙΜΕΝΟ"
+
+#: ../src/font-thumbnailer.c:191
+msgid "Thumbnail size (default: 128)"
+msgstr "Μέγεθος μικρογραφίας (προεπιλογή: 128)"
+
+#: ../src/font-thumbnailer.c:191
+msgid "SIZE"
+msgstr "ΜΕΓΕΘΟΣ"
+
+#: ../src/font-thumbnailer.c:193
+msgid "FONT-FILE OUTPUT-FILE"
+msgstr "FONT-FILE OUTPUT-FILE"
+
+#: ../src/font-view-app-menu.ui.h:1
+msgid "About"
+msgstr "Περί"
+
+#: ../src/font-view-app-menu.ui.h:2
+msgid "Quit"
+msgstr "Έξοδος"
+
+#: ../src/font-view.c:176
+msgid "Name"
+msgstr "Όνομα"
+
+#: ../src/font-view.c:179
+msgid "Style"
+msgstr "Πρότυπο"
+
+#: ../src/font-view.c:189
+msgid "Type"
+msgstr "Τύπος"
+
+#: ../src/font-view.c:234 ../src/font-view.c:253
+msgid "Version"
+msgstr "Έκδοση"
+
+#: ../src/font-view.c:239 ../src/font-view.c:259
+msgid "Copyright"
+msgstr "Πνευματικά δικαιώματα"
+
+#: ../src/font-view.c:244
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: ../src/font-view.c:272
+msgid "Install Failed"
+msgstr "Απέτυχε η εγκατάσταση"
+
+#: ../src/font-view.c:278
+msgid "Installed"
+msgstr "Εγκαταστάθηκε"
+
+#: ../src/font-view.c:281 ../src/font-view.c:525
+msgid "Install"
+msgstr "Εγκατάσταση"
+
+#: ../src/font-view.c:414
+msgid "This font could not be displayed."
+msgstr "Δε μπορεί να εμφανιστεί αυτή η γραμματοσειρά."
+
+#: ../src/font-view.c:478 ../src/font-view.c:536
+msgid "Info"
+msgstr "Πληροφορίες"
+
+#: ../src/font-view.c:553
+msgid "Back"
+msgstr "Πίσω"
+
+#: ../src/font-view.c:643
+msgid "All Fonts"
+msgstr "Όλες οι γραμματοσειρές"
+
+#: ../src/font-view.c:761 ../src/org.gnome.font-viewer.desktop.in.in.h:1
+msgid "Font Viewer"
+msgstr "Εφαρμογή προβολής γραμματοσειρών"
+
+#: ../src/font-view.c:762 ../src/org.gnome.font-viewer.desktop.in.in.h:2
+msgid "View fonts on your system"
+msgstr "Δείτε τις γραμματοσειρές του συστήματος σας"
+
+#: ../src/font-view.c:764
+msgid "translator-credits"
+msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME\n"
+"Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
+"Spiros Papadimitriou <spapadim+@cs.cmu.edu>\n"
+"Ευστάθιος Ιωσηφίδης <iosifidis@opensuse.org>\n"
+"Μαρία Θουκυδίδου <marablack3@gmail.com>\n"
+"Για περισσότερα δείτε http://www.gnome.gr/"
+
+#: ../src/org.gnome.font-viewer.desktop.in.in.h:3
+msgid "fonts;fontface;"
+msgstr "γραμματοσειρές;οικογένεια γραμματοσειρών;fonts;fontface;"
+
+#~ msgid "_Close"
+#~ msgstr "_Κλείσιμο"
+
+#~ msgid "About Font Viewer"
+#~ msgstr "Περί Εφαρμογής προβολής γραμματοσειρών"
+
+#~ msgid "Done"
+#~ msgstr "Ολοκληρώθηκε"
+
+#~ msgid "Font size (default: 64)"
+#~ msgstr "Μέγεθος γραμματοσειράς (προεπιλεγμένο: 64)"
+
+#~ msgid "Size:"
+#~ msgstr "Μέγεθος:"
+
+#~ msgid "Usage: %s fontfile\n"
+#~ msgstr "Χρήση: %s αρχείο γραμματοσειράς\n"
+
+#~ msgid "Preview fonts"
+#~ msgstr "Προεπισκόπηση γραμματοσειρών"

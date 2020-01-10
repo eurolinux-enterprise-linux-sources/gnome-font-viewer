@@ -1,0 +1,159 @@
+# gnome-utils's Portuguese translation
+# Copyright © 1999, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013 gnome-utils
+# Distributed under the same licence as the gnome-utils package
+# Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1999.
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# António Lima <amrlima@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 3.8\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"font-viewer&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-02-25 07:47+0000\n"
+"PO-Revision-Date: 2014-02-25 15:41+0100\n"
+"Last-Translator: Tiago S. <almosthumane@portugalmail.pt>\n"
+"Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:1
+msgid ""
+"GNOME Font Viewer shows you the fonts installed on your computer for your "
+"use as thumbnails. Selecting any thumbnails shows the full view of how the "
+"font would look under various sizes."
+msgstr ""
+"O Visualizador de Tipo de Letra GNOME mostra-lhe os tipos de letra "
+"instalados no seu computador para si como miniaturas. Seleccione qualquer "
+"uma das miniaturas para ter uma visão completa de como o tipo de letra "
+"aparenta em diversos tamanhos."
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:2
+msgid ""
+"GNOME Font Viewer also supports installing new font files downloaded in the ."
+"ttf and other formats. Fonts may be installed only for your use or made "
+"available to all users on the computer."
+msgstr ""
+"O Visualizador de Tipos de Letra GNOME também suporta a instalação de novos "
+"ficheiros de tipos de letra transferidos em .ttf ou noutros formatos. Os "
+"tipos de letra podem ser instalados somente para o seu uso ou tornados "
+"disponíveis para todos os utilizadores do computador."
+
+#: ../src/font-thumbnailer.c:189
+msgid "Text to thumbnail (default: Aa)"
+msgstr "Texto para amostragem (omissão: Aa)"
+
+#: ../src/font-thumbnailer.c:189
+msgid "TEXT"
+msgstr "TEXTO"
+
+#: ../src/font-thumbnailer.c:191
+msgid "Thumbnail size (default: 128)"
+msgstr "Texto para amostragem (omissão: 128)"
+
+#: ../src/font-thumbnailer.c:191
+msgid "SIZE"
+msgstr "TAMANHO"
+
+#: ../src/font-thumbnailer.c:193
+msgid "FONT-FILE OUTPUT-FILE"
+msgstr "FICHEIRO-FONTE FICHEIRO-SAÍDA"
+
+#: ../src/font-view-app-menu.ui.h:1
+msgid "About"
+msgstr "Sobre"
+
+#: ../src/font-view-app-menu.ui.h:2
+msgid "Quit"
+msgstr "Sair"
+
+#: ../src/font-view.c:176
+msgid "Name"
+msgstr "Nome"
+
+#: ../src/font-view.c:179
+msgid "Style"
+msgstr "Estilo"
+
+#: ../src/font-view.c:189
+msgid "Type"
+msgstr "Tipo"
+
+#: ../src/font-view.c:234 ../src/font-view.c:253
+msgid "Version"
+msgstr "Versão"
+
+#: ../src/font-view.c:239 ../src/font-view.c:259
+msgid "Copyright"
+msgstr "Direitos de Autor"
+
+#: ../src/font-view.c:244
+msgid "Description"
+msgstr "Descrição"
+
+#: ../src/font-view.c:272
+msgid "Install Failed"
+msgstr "Falha ao Instalar"
+
+#: ../src/font-view.c:278
+msgid "Installed"
+msgstr "Instalada"
+
+#: ../src/font-view.c:281 ../src/font-view.c:522
+msgid "Install"
+msgstr "Instalar"
+
+#: ../src/font-view.c:414
+msgid "This font could not be displayed."
+msgstr "Incapaz de apresentar esta fonte."
+
+#: ../src/font-view.c:479
+msgid "_Close"
+msgstr "_Fechar"
+
+#: ../src/font-view.c:533
+msgid "Info"
+msgstr "Informação"
+
+#: ../src/font-view.c:550
+msgid "Back"
+msgstr "Retroceder"
+
+#: ../src/font-view.c:640
+msgid "All Fonts"
+msgstr "Todas as Fontes"
+
+#: ../src/font-view.c:758 ../src/gnome-font-viewer.desktop.in.in.h:1
+msgid "Font Viewer"
+msgstr "Visualizador de Fontes"
+
+#: ../src/font-view.c:759 ../src/gnome-font-viewer.desktop.in.in.h:2
+msgid "View fonts on your system"
+msgstr "Visualize as fontes no seu sistema"
+
+#: ../src/font-view.c:761
+msgid "translator-credits"
+msgstr "Duarte Loreto <happyguy_pt@hotmail.com>"
+
+#: ../src/gnome-font-viewer.desktop.in.in.h:3
+msgid "fonts;fontface;"
+msgstr "fontes;tipos de fonte;"
+
+#~ msgid "About Font Viewer"
+#~ msgstr "Sobre o Visualizador de Fontes"
+
+#~ msgid "Font size (default: 64)"
+#~ msgstr "Tamanho da fonte (omissão: 64)"
+
+#~ msgid "Size:"
+#~ msgstr "Tamanho:"
+
+#~ msgid "Usage: %s fontfile\n"
+#~ msgstr "Utilização: %s ficheiro-fonte\n"
+
+#~ msgid "Preview fonts"
+#~ msgstr "Antever fontes"

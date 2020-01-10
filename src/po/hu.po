@@ -1,0 +1,171 @@
+# Hungarian translation of gnome-font-viewer.
+# Copyright (C) 1999 - 2006, 2007, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-font-viewer package.
+#
+# Szabolcs Ban <shooby at gnome dot hu>, 1999, 2000.
+# Gergely Nagy <greg at gnome dot hu>, 2001.
+# Andras Timar <timar at gnome dot hu>, 2001, 2002, 2003.
+# Gabor Sari <saga at gnome dot hu>, 2003, 2004.
+# Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2004, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2014.
+# Mate ORY <orymate at gmail d0t com>, 2006.
+# Lukács Bence <lukacs.bence1 at gmail dot com>, 2012.
+# Balázs Úr <urbalazs at gmail dot com>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-font-viewer master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"font-viewer&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-03-19 07:47+0000\n"
+"PO-Revision-Date: 2014-03-19 15:59+0100\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <openscope at googlegroups dot com>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.4\n"
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:1
+msgid ""
+"GNOME Font Viewer shows you the fonts installed on your computer for your "
+"use as thumbnails. Selecting any thumbnails shows the full view of how the "
+"font would look under various sizes."
+msgstr ""
+"A GNOME Betűkészlet-megjelenítő bélyegképként jeleníti meg a számítógépén "
+"telepített betűkészleteket. A bélyegképek kiválasztásakor megjelenik egy "
+"teljes nézet, hogy az adott betűkészlet hogyan néz ki különböző méretekben."
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:2
+msgid ""
+"GNOME Font Viewer also supports installing new font files downloaded in the ."
+"ttf and other formats. Fonts may be installed only for your use or made "
+"available to all users on the computer."
+msgstr ""
+"A GNOME Betűkészlet-megjelenítő támogatja a .ttf és más formátumú, letöltött "
+"betűkészletfájlok telepítését is. A betűkészletek telepíthetők csak személyes "
+"felhasználásra, vagy a számítógép minden felhasználója számára is."
+
+#: ../src/font-thumbnailer.c:189
+msgid "Text to thumbnail (default: Aa)"
+msgstr "Bélyegkép szövege (alapértelmezés: Aa)"
+
+#: ../src/font-thumbnailer.c:189
+msgid "TEXT"
+msgstr "SZÖVEG"
+
+#: ../src/font-thumbnailer.c:191
+msgid "Thumbnail size (default: 128)"
+msgstr "Bélyegkép mérete (alapértelmezés: 128)"
+
+#: ../src/font-thumbnailer.c:191
+msgid "SIZE"
+msgstr "MÉRET"
+
+#: ../src/font-thumbnailer.c:193
+msgid "FONT-FILE OUTPUT-FILE"
+msgstr "BETŰKÉSZLETFÁJL KIMENETIFÁJL"
+
+#: ../src/font-view-app-menu.ui.h:1
+msgid "About"
+msgstr "Névjegy"
+
+#: ../src/font-view-app-menu.ui.h:2
+msgid "Quit"
+msgstr "Kilépés"
+
+#: ../src/font-view.c:176
+msgid "Name"
+msgstr "Név"
+
+#: ../src/font-view.c:179
+msgid "Style"
+msgstr "Stílus"
+
+#: ../src/font-view.c:189
+msgid "Type"
+msgstr "Típus"
+
+#: ../src/font-view.c:234 ../src/font-view.c:253
+msgid "Version"
+msgstr "Verzió"
+
+#: ../src/font-view.c:239 ../src/font-view.c:259
+msgid "Copyright"
+msgstr "Szerzői jog"
+
+#: ../src/font-view.c:244
+msgid "Description"
+msgstr "Leírás"
+
+#: ../src/font-view.c:272
+msgid "Install Failed"
+msgstr "A telepítés meghiúsult"
+
+#: ../src/font-view.c:278
+msgid "Installed"
+msgstr "Telepítve"
+
+#: ../src/font-view.c:281 ../src/font-view.c:522
+msgid "Install"
+msgstr "Telepítés"
+
+#: ../src/font-view.c:414
+msgid "This font could not be displayed."
+msgstr "Ez a betűkészlet nem jeleníthető meg."
+
+#: ../src/font-view.c:479
+msgid "_Close"
+msgstr "_Bezárás"
+
+#: ../src/font-view.c:533
+msgid "Info"
+msgstr "Információk"
+
+#: ../src/font-view.c:550
+msgid "Back"
+msgstr "Vissza"
+
+#: ../src/font-view.c:640
+msgid "All Fonts"
+msgstr "Minden betűkészlet"
+
+#: ../src/font-view.c:758 ../src/gnome-font-viewer.desktop.in.in.h:1
+msgid "Font Viewer"
+msgstr "Betűkészlet-megjelenítő"
+
+#: ../src/font-view.c:759 ../src/gnome-font-viewer.desktop.in.in.h:2
+msgid "View fonts on your system"
+msgstr "Telepített betűkészletek megjelenítése"
+
+#: ../src/font-view.c:761
+msgid "translator-credits"
+msgstr ""
+"Bán Szabolcs <shooby at gnome dot hu>\n"
+"Dvornik László <dvornik at gnome dot hu>\n"
+"Kelemen Gábor <kelemeng at gnome dot hu>\n"
+"Lukács Bence <lukacs.bence1 at gmail dot com>\n"
+"Nagy Gergely <greg at gnome dot hu>\n"
+"Őry Máté <orymate at gmail d0t com>\n"
+"Sári Gábor <saga at gnome dot hu>\n"
+"Tímár András <timar at gnome dot hu>"
+
+#: ../src/gnome-font-viewer.desktop.in.in.h:3
+msgid "fonts;fontface;"
+msgstr "betűk;betűkészlet;"
+
+#~ msgid "About Font Viewer"
+#~ msgstr "A Betűkészlet-megjelenítő névjegye"
+
+#~ msgid "Font size (default: 64)"
+#~ msgstr "Betűméret (alapértelmezett: 64)"
+
+#~ msgid "Size:"
+#~ msgstr "Méret:"
+
+#~ msgid "Usage: %s fontfile\n"
+#~ msgstr "Használat: %s betűkészletfájl\n"
+
+#~ msgid "Preview fonts"
+#~ msgstr "Betűkészletek előnézete"

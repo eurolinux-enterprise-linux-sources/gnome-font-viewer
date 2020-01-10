@@ -1,0 +1,149 @@
+# translation of lt.po to Lithuanian
+# Lithuanian translation of gnome-utils
+# Copyright (C) 2000-2009 Free Software Foundation, Inc.
+# Gediminas Paulauskas <menesis@chatsubo.lt>, 2000-2002.
+# Mantas Kriaučiūnas <mantas@akl.lt>, 2002-2003.
+# Tomas Kuliavas <tokul@users.sourceforge.net>, 2003.
+# Žygimantas Beručka <zygis@gnome.org>, 2003-2006, 2009, 2010.
+# Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007, 2008.
+# Aurimas Černius <aurisc4@gmail.com>, 2013, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"font-viewer&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-01-22 01:16+0000\n"
+"PO-Revision-Date: 2014-01-28 23:17+0200\n"
+"Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
+"Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:1
+msgid ""
+"GNOME Font Viewer shows you the fonts installed on your computer for your "
+"use as thumbnails. Selecting any thumbnails shows the full view of how the "
+"font would look under various sizes."
+msgstr ""
+"GNOME šriftų žiūryklė rodo jūsų kompiuteryje įdiegtus šriftus miniatiūrų "
+"pavidalu. Pasirinkus bet kurią miniatiūrą parodoma, kaip šriftas atrodytų "
+"įvairiais dydžiais."
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:2
+msgid ""
+"GNOME Font Viewer also supports installing new font files downloaded in the ."
+"ttf and other formats. Fonts may be installed only for your use or made "
+"available to all users on the computer."
+msgstr ""
+"GNOME šriftų žiūryklė taip pat palaiko naujus šriftų failus, parsiųstus .ttf "
+"ir kitais formatais. Šriftai gali būti įdiegti jūsų naudojimui arba padaryti "
+"prieinamais visiems kompiuterio naudotojams."
+
+#: ../src/font-thumbnailer.c:189
+msgid "Text to thumbnail (default: Aa)"
+msgstr "Tekstas į miniatiūrą (numatyta: Aa)"
+
+#: ../src/font-thumbnailer.c:189
+msgid "TEXT"
+msgstr "TEKSTAS"
+
+#: ../src/font-thumbnailer.c:191
+msgid "Thumbnail size (default: 128)"
+msgstr "Miniatiūrų dydis (numatyta: 128)"
+
+#: ../src/font-thumbnailer.c:191
+msgid "SIZE"
+msgstr "DYDIS"
+
+#: ../src/font-thumbnailer.c:193
+msgid "FONT-FILE OUTPUT-FILE"
+msgstr "ŠRIFTO-FAILAS REZULTATO-FAILAS"
+
+#: ../src/font-view-app-menu.ui.h:1
+msgid "About"
+msgstr "Apie"
+
+#: ../src/font-view-app-menu.ui.h:2
+msgid "Quit"
+msgstr "Išeiti"
+
+#: ../src/font-view.c:176
+msgid "Name"
+msgstr "Pavadinimas"
+
+#: ../src/font-view.c:179
+msgid "Style"
+msgstr "Stilius"
+
+#: ../src/font-view.c:189
+msgid "Type"
+msgstr "Tipas"
+
+#: ../src/font-view.c:234 ../src/font-view.c:253
+msgid "Version"
+msgstr "Versija"
+
+#: ../src/font-view.c:239 ../src/font-view.c:259
+msgid "Copyright"
+msgstr "Autorinės teisės"
+
+#: ../src/font-view.c:244
+msgid "Description"
+msgstr "Aprašymas"
+
+#: ../src/font-view.c:272
+msgid "Install Failed"
+msgstr "Diegimas nepavyko"
+
+#: ../src/font-view.c:278
+msgid "Installed"
+msgstr "Įdiegta"
+
+#: ../src/font-view.c:281 ../src/font-view.c:522
+msgid "Install"
+msgstr "Įdiegti"
+
+#: ../src/font-view.c:414
+msgid "This font could not be displayed."
+msgstr "Nepavyko parodyti šio šrifto."
+
+#: ../src/font-view.c:479
+msgid "_Close"
+msgstr "_Užverti"
+
+#: ../src/font-view.c:533
+msgid "Info"
+msgstr "Informacija"
+
+#: ../src/font-view.c:550
+msgid "Back"
+msgstr "Atgal"
+
+#: ../src/font-view.c:640
+msgid "All Fonts"
+msgstr "Visi šriftai"
+
+#: ../src/font-view.c:758 ../src/gnome-font-viewer.desktop.in.in.h:1
+msgid "Font Viewer"
+msgstr "Šriftų žiūryklė"
+
+#: ../src/font-view.c:759 ../src/gnome-font-viewer.desktop.in.in.h:2
+msgid "View fonts on your system"
+msgstr "Rodyti sistemos šriftus"
+
+#: ../src/font-view.c:761
+msgid "translator-credits"
+msgstr ""
+"išvertė:\n"
+"Aurimas Černius <aurisc4@gmail.com>"
+
+#: ../src/gnome-font-viewer.desktop.in.in.h:3
+msgid "fonts;fontface;"
+msgstr "šriftai;šrifto peržiūra;"
+

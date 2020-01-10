@@ -1,0 +1,163 @@
+# translation of gnome-utils.HEAD.po to Punjabi
+# Punjabi translation of gnome-utils.HEAD.
+# Copyright (C) 2004 THE gnome-utils.HEAD'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-utils.HEAD package.
+#
+# Amanpreet Singh Alam <amanlinux@netscape.net>, 2004.
+# A S Alam <aalam@users.sf.net>, 2005, 2006, 2007,2008, 2009, 2010, 2011.
+# Amanpreet Singh Alam <aalam@users.sf.net>, 2009, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-utils.HEAD\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"font-viewer&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-03-19 07:47+0000\n"
+"PO-Revision-Date: 2014-03-19 16:28-0500\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <kde-i18n-doc@kde.org>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:1
+msgid ""
+"GNOME Font Viewer shows you the fonts installed on your computer for your "
+"use as thumbnails. Selecting any thumbnails shows the full view of how the "
+"font would look under various sizes."
+msgstr ""
+"ਗਨੋਮ ਫੋਂਟ ਦਰਸ਼ਕ ਤੁਹਾਡੀ ਵਰਤੋਂ ਲਈ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਉੱਤੇ ਇੰਸਟਾਲ ਹੋਏ ਫੋਂਟ ਨੂੰ ਥੰਮਨੇਲ "
+"ਵਜੋਂ ਵੇਖਾਉਂਦਾ ਹੈ। "
+"ਕਿਸੇ ਵੀ ਥੰਮਨੇਲ ਨੂੰ ਚੁਣ ਕੇ ਤੁਸੀਂ ਵੇਖ ਸਕਦੇ ਹੋ ਕਿ ਫੋਂਟ ਵੱਖ-ਵੱਖ ਆਕਾਰਾਂ ਵਿੱਚ ਕਿੰਝ "
+"ਵੇਖਾਈ ਦੇਣਗੇ।"
+
+#: ../data/gnome-font-viewer.appdata.xml.in.h:2
+msgid ""
+"GNOME Font Viewer also supports installing new font files downloaded in the ."
+"ttf and other formats. Fonts may be installed only for your use or made "
+"available to all users on the computer."
+msgstr ""
+"ਗਨੋਮ ਫੋਂਟ ਦਰਸ਼ਕ ਹੁਣ ttf ਤੇ ਹੋਰ ਫਾਰਮੈਟ ਵਿੱਚੋਂ ਡਾਊਨਲੋਡ ਕੀਤੀਆਂ ਨਵੀਂ ਫੋਂਟ ਫਾਇਲਾਂ "
+"ਨੂੰ ਇੰਸਟਾਲ "
+"ਕਰਨ ਲਈ ਸਹਾਇਕ ਹੈ। ਫੋਂਟ ਨੂੰ ਕੇਵਲ ਤੁਹਾਡੀ ਵਰਤੋਂ ਲਈ ਇੰਸਟਾਲ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ ਜਾਂ "
+"ਤੁਸੀਂ ਕੰਪਿਊਟਰ ਉੱਤੇ "
+"ਸਭ ਫੋਂਟ ਵਰਤਣ ਵਾਲਿਆਂ ਲਈ ਵੀ ਇੰਸਟਾਲ ਕਰ ਸਕਦੇ ਹੋ।"
+
+#: ../src/font-thumbnailer.c:189
+msgid "Text to thumbnail (default: Aa)"
+msgstr "ਥੰਬਨੇਲ ਕਰਨ ਲਈ ਟੈਕਸਟ (ਡਿਫਾਲਟ: Aa)"
+
+#: ../src/font-thumbnailer.c:189
+msgid "TEXT"
+msgstr "ਟੈਕਸਟ"
+
+#: ../src/font-thumbnailer.c:191
+msgid "Thumbnail size (default: 128)"
+msgstr "ਥੰਬਨੇਲ ਕਰਨ ਲਈ ਟੈਕਸਟ (ਡਿਫਾਲਟ: 128)"
+
+#: ../src/font-thumbnailer.c:191
+msgid "SIZE"
+msgstr "ਅਕਾਰ"
+
+#: ../src/font-thumbnailer.c:193
+msgid "FONT-FILE OUTPUT-FILE"
+msgstr "FONT-FILE OUTPUT-FILE"
+
+#: ../src/font-view-app-menu.ui.h:1
+msgid "About"
+msgstr "ਇਸ ਬਾਰੇ"
+
+#: ../src/font-view-app-menu.ui.h:2
+msgid "Quit"
+msgstr "ਬਾਹਰ"
+
+#: ../src/font-view.c:176
+msgid "Name"
+msgstr "ਨਾਂ"
+
+#: ../src/font-view.c:179
+msgid "Style"
+msgstr "ਸਟਾਈਲ"
+
+#: ../src/font-view.c:189
+msgid "Type"
+msgstr "ਕਿਸਮ"
+
+#: ../src/font-view.c:234 ../src/font-view.c:253
+msgid "Version"
+msgstr "ਵਰਜਨ"
+
+#: ../src/font-view.c:239 ../src/font-view.c:259
+msgid "Copyright"
+msgstr "ਕਾਪੀਰਾਈਟ"
+
+#: ../src/font-view.c:244
+msgid "Description"
+msgstr "ਵੇਰਵਾ"
+
+#: ../src/font-view.c:272
+msgid "Install Failed"
+msgstr "ਇੰਸਟਾਲ ਫੇਲ੍ਹ"
+
+#: ../src/font-view.c:278
+msgid "Installed"
+msgstr "ਇੰਸਟਾਲ ਹੈ"
+
+#: ../src/font-view.c:281 ../src/font-view.c:522
+msgid "Install"
+msgstr "ਇੰਸਟਾਲ"
+
+#: ../src/font-view.c:414
+msgid "This font could not be displayed."
+msgstr "ਇਹ ਫੋਂਟ ਵੇਖਾਇਆ ਨਹੀਂ ਜਾ ਸਕਦਾ।"
+
+#: ../src/font-view.c:479
+msgid "_Close"
+msgstr "ਬੰਦ ਕਰੋ(_C)"
+
+#: ../src/font-view.c:533
+msgid "Info"
+msgstr "ਜਾਣਕਾਰੀ"
+
+#: ../src/font-view.c:550
+msgid "Back"
+msgstr "ਪਿੱਛੇ"
+
+#: ../src/font-view.c:640
+msgid "All Fonts"
+msgstr "ਸਭ ਫੋਂਟ"
+
+#: ../src/font-view.c:758 ../src/gnome-font-viewer.desktop.in.in.h:1
+msgid "Font Viewer"
+msgstr "ਫੋਂਟ ਦਰਸ਼ਕ"
+
+#: ../src/font-view.c:759 ../src/gnome-font-viewer.desktop.in.in.h:2
+msgid "View fonts on your system"
+msgstr "ਆਪਣੇ ਸਿਸਟਮ ਉੱਤੇ ਫੋਂਟ ਵੇਖੋ"
+
+#: ../src/font-view.c:761
+msgid "translator-credits"
+msgstr ""
+"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ\n"
+"ਪੰਜਾਬੀ ਓਪਨਸੋਰਸ ਟੀਮ (POST)"
+
+#: ../src/gnome-font-viewer.desktop.in.in.h:3
+msgid "fonts;fontface;"
+msgstr "ਫੋਂਟ;ਫੋਂਟਫੇਸ;"
+
+#~ msgid "About Font Viewer"
+#~ msgstr "ਫੋਂਟ ਦਰਸ਼ਕ ਬਾਰੇ"
+
+#~ msgid "Font size (default: 64)"
+#~ msgstr "ਫੋਂਟ ਆਕਾਰ (ਡਿਫਾਲਟ: 64)"
+
+#~ msgid "Size:"
+#~ msgstr "ਅਕਾਰ:"
+
+#~ msgid "Usage: %s fontfile\n"
+#~ msgstr "ਵਰਤੋਂ: %s fontfile\n"
+
+#~ msgid "Preview fonts"
+#~ msgstr "ਫੋਂਟ ਝਲਕ"
