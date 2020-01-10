@@ -1,8 +1,6 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-data/org.gnome.font-viewer.appdata.xml.in
 src/font-thumbnailer.c
-src/font-view-app-menu.ui
+[type: gettext/glade]src/font-view-app-menu.ui
 src/font-view.c
-src/org.gnome.font-viewer.desktop.in
-src/open-type-layout.h
+src/gnome-font-viewer.desktop.in.in

@@ -12,7 +12,9 @@
  * General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * The Sushi project hereby grant permission for non-gpl compatible GStreamer
  * plugins to be used and distributed together with GStreamer and Sushi. This
@@ -29,7 +31,6 @@
 #include <glib-object.h>
 #include <gtk/gtk.h>
 #include <cairo/cairo-ft.h>
-#include <hb-ft.h>
 
 G_BEGIN_DECLS
 
@@ -58,13 +59,11 @@ struct _SushiFontWidgetClass
 
 GType    sushi_font_widget_get_type     (void) G_GNUC_CONST;
 
-SushiFontWidget *sushi_font_widget_new (const gchar *uri, gint face_index);
+SushiFontWidget *sushi_font_widget_new (const gchar *uri);
 
 FT_Face sushi_font_widget_get_ft_face (SushiFontWidget *self);
 
 const gchar *sushi_font_widget_get_uri (SushiFontWidget *self);
-
-void sushi_font_widget_load (SushiFontWidget *self);
 
 G_END_DECLS
 

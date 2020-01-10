@@ -1,170 +1,122 @@
-# Vietnamese Translation for gnome-font-viewer.
-# Copyright © 2014 GNOME i18n Project for Vietnamese.
-# This file is distributed under the same license as the gnome-font-viewer package.
+# Vietnamese Translation for GNOME Utils.
+# Copyright © 2009 GNOME i18n Project for Vietnamese.
 # Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2002,2007,2011-2012.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
-# Trần Ngọc Quân <vnwildman@gmail.com>, 2014, 2017.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-font-viewer master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Project-Id-Version: gnome-utils GNOME TRUNK\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "font-viewer&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-09-11 11:20+0000\n"
-"PO-Revision-Date: 2017-09-17 14:56+0700\n"
-"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
-"Language-Team: Vietnamese <gnome-vi-list@gnome.org>\n"
-"Language: vi\n"
+"POT-Creation-Date: 2012-06-01 19:04+0000\n"
+"PO-Revision-Date: 2012-06-30 20:10+0700\n"
+"Last-Translator: Nguyễn Thái Ngọc Duy <pclouds@gmail.com>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: LocFactoryEditor 1.8\n"
 
-#: data/org.gnome.font-viewer.appdata.xml.in:6 src/font-view.c:76
-msgid "GNOME Fonts"
-msgstr "Xem phông chữ GNOME"
-
-#: data/org.gnome.font-viewer.appdata.xml.in:7 src/font-view.c:796
-#: src/org.gnome.font-viewer.desktop.in:4
-msgid "View fonts on your system"
-msgstr "Ứng dụng xem phông chữ trên hệ thống của bạn"
-
-#: data/org.gnome.font-viewer.appdata.xml.in:9
-msgid ""
-"GNOME Fonts shows you the fonts installed on your computer for your use as "
-"thumbnails. Selecting any thumbnails shows the full view of how the font "
-"would look under various sizes."
-msgstr ""
-"Bộ xem phông chữ GNOME hiển thị cho bạn những phông chữ đã được cài đặt trên "
-"máy tính của bạn để bạn dùng như là ảnh mẫu. Chọn bất kỳ ảnh mẫu nào để hiển "
-"thị xem nó trông như thế nào khi ở các kích cỡ khác nhau."
-
-#: data/org.gnome.font-viewer.appdata.xml.in:15
-msgid ""
-"GNOME Fonts also supports installing new font files downloaded in the .ttf "
-"and other formats. Fonts may be installed only for your use or made "
-"available to all users on the computer."
-msgstr ""
-"Bộ xem phông chữ GNOME cũng hỗ trợ cài đặt các tập tin phông chữ được tải về "
-"ở định dạng .ttf và khác nữa. Phông chữ có thể được cài đặt dành riêng cho "
-"bạn hay cho tất cả các tài khoản khác trên máy tính."
-
-#: src/font-thumbnailer.c:189
+#: ../src/font-thumbnailer.c:190
 msgid "Text to thumbnail (default: Aa)"
-msgstr "Chữ tạo ảnh mẫu (mặc định: Aa)"
+msgstr "Chữ kế hình (mặc định: Aa)"
 
-#: src/font-thumbnailer.c:189
+#: ../src/font-thumbnailer.c:190
 msgid "TEXT"
 msgstr "CHỮ"
 
-#: src/font-thumbnailer.c:191
+#: ../src/font-thumbnailer.c:192
+#| msgid "Text to thumbnail (default: Aa)"
 msgid "Thumbnail size (default: 128)"
 msgstr "Kích thước ảnh mẫu (mặc định: 128)"
 
-#: src/font-thumbnailer.c:191
+#: ../src/font-thumbnailer.c:192
 msgid "SIZE"
 msgstr "CỠ"
 
-#: src/font-thumbnailer.c:193
+#: ../src/font-thumbnailer.c:194
 msgid "FONT-FILE OUTPUT-FILE"
-msgstr "TẬP-TIN-PHÔNG TẬP-TIN-KẾT-XUẤT"
+msgstr "TẬP-TIN-PHÔNG KẾT-XUẤT"
 
-#: src/font-view-app-menu.ui:6
-msgid "About"
-msgstr "Giới thiệu"
-
-#: src/font-view-app-menu.ui:10
-msgid "Quit"
-msgstr "Thoát"
-
-#: src/font-view.c:84
-msgid "Show the application's version"
-msgstr "Hiển thị phiên bản của ứng dụng"
-
-#: src/font-view.c:197
+#: ../src/font-view.c:177
+#| msgid "Name:"
 msgid "Name"
 msgstr "Tên"
 
-#: src/font-view.c:200
+#: ../src/font-view.c:180
+#| msgid "Style:"
 msgid "Style"
 msgstr "Kiểu"
 
-#: src/font-view.c:210
+#: ../src/font-view.c:190
+#| msgid "Type:"
 msgid "Type"
-msgstr "Kiểu"
+msgstr "Loại"
 
-#: src/font-view.c:255 src/font-view.c:274
+#: ../src/font-view.c:235 ../src/font-view.c:254
+#| msgid "Version:"
 msgid "Version"
 msgstr "Phiên bản"
 
-#: src/font-view.c:260 src/font-view.c:280
+#: ../src/font-view.c:240 ../src/font-view.c:260
+#| msgid "Copyright:"
 msgid "Copyright"
 msgstr "Bản quyền"
 
-#: src/font-view.c:265
+#: ../src/font-view.c:245
+#| msgid "Description:"
 msgid "Description"
 msgstr "Mô tả"
 
-#: src/font-view.c:296
+#: ../src/font-view.c:273
 msgid "Install Failed"
 msgstr "Không cài được"
 
-#: src/font-view.c:303
+#: ../src/font-view.c:279
 msgid "Installed"
 msgstr "Đã cài"
 
-#: src/font-view.c:307 src/font-view.c:552
+#: ../src/font-view.c:282 ../src/font-view.c:427
+#| msgid "Installed"
 msgid "Install"
 msgstr "Cài đặt"
 
-#: src/font-view.c:441
-msgid "This font could not be displayed."
-msgstr "Không thể hiển thị phông chữ này."
-
-#: src/font-view.c:505 src/font-view.c:563
+#: ../src/font-view.c:420
 msgid "Info"
 msgstr "Thông tin"
 
-#: src/font-view.c:578
+#: ../src/font-view.c:433
 msgid "Back"
-msgstr "Quay lại"
+msgstr "Lùi"
 
-#: src/font-view.c:669
+#: ../src/font-view.c:524
+#| msgid "I_nstall Font"
 msgid "All Fonts"
-msgstr "Mọi phông chữ"
+msgstr "Mọi phông"
 
-#: src/font-view.c:795 src/org.gnome.font-viewer.desktop.in:3
-msgid "Fonts"
-msgstr "Xem phông chữ"
+#: ../src/font-view.c:605 ../src/font-view.c:648
+#: ../src/gnome-font-viewer.desktop.in.in.h:1
+msgid "Font Viewer"
+msgstr "Trình xem phông"
 
-#: src/font-view.c:798
+#: ../src/font-view.c:606 ../src/gnome-font-viewer.desktop.in.in.h:2
+msgid "View fonts on your system"
+msgstr "Xem phông trên hệ thống"
+
+#: ../src/font-view.c:608
 msgid "translator-credits"
-msgstr "Nhóm Việt hóa GNOME <gnome-vi-list@gnome.org>"
+msgstr "Nguyễn Thái Ngọc Duy <pclouds@gmail.com>"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: src/org.gnome.font-viewer.desktop.in:6
-msgid "fonts;fontface;"
-msgstr "fonts;phông;phong;chữ;chư;chu;fontface;"
+#: ../src/font-view-app-menu.ui.h:1
+#| msgid "Font Viewer"
+msgid "About Font Viewer"
+msgstr "Giới thiệu Trình xem phông"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: src/org.gnome.font-viewer.desktop.in:8
-msgid "preferences-desktop-font"
-msgstr "preferences-desktop-font"
-
-#~ msgid "Font Viewer"
-#~ msgstr "Xem phông chữ"
-
-#~ msgid "[FILE...]"
-#~ msgstr "[TẬP TIN…]"
-
-#~ msgid ""
-#~ "Run '%s --help' to see a full list of available command line options."
-#~ msgstr ""
-#~ "Chạy lệnh “%s --help” để xem danh sách tất cả các tùy chọn dòng lệnh."
-
-#~ msgid "About Font Viewer"
-#~ msgstr "Giới thiệu phần mềm xem phông"
+#: ../src/font-view-app-menu.ui.h:2
+msgid "Quit"
+msgstr "Thoát"
 
 #~ msgid "Font size (default: 64)"
 #~ msgstr "Cỡ chữ (mặc định: 64)"

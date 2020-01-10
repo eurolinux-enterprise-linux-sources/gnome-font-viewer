@@ -1,21 +1,19 @@
-%global         release_version %(echo %{version} | awk -F. '{print $1"."$2}')
-
 Name:           gnome-font-viewer
-Version:        3.28.0
-Release:        1%{?dist}
+Version:        3.8.0
+%global         release_version %(echo %{version} | awk -F. '{print $1"."$2}')
+Release:        3%{?dist}
 Summary:        Utility for previewing fonts for GNOME
 
+Group:          Applications/System
 License:        GPLv2+
 #No URL for the package specifically, as of now
 URL:            http://www.gnome.org/gnome-3/
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/gnome-font-viewer/%{release_version}/%{name}-%{version}.tar.xz
 
 BuildRequires:  gnome-desktop3-devel
-BuildRequires:  gettext
 BuildRequires:  gtk3-devel
+BuildRequires:  intltool
 BuildRequires:  desktop-file-utils
-BuildRequires:  libappstream-glib
-BuildRequires:  meson
 
 %description
 Use gnome-font-viewer, the Font Viewer, to preview fonts and display
@@ -23,19 +21,19 @@ information about a specified font. You can use the Font Viewer to display the
 name, style, type, size, version and copyright of the font.
 
 %prep
-%autosetup -p1
+%setup -q
 
 %build
-%meson
-%meson_build
+%configure --disable-silent-rules
+make %{?_smp_mflags}
+
 
 %install
-%meson_install
+make install DESTDIR=$RPM_BUILD_ROOT
+
+desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/%{name}.desktop
 
 %find_lang %{name} --with-gnome
-
-%check
-desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.font-viewer.desktop
 
 %post
 update-desktop-database &> /dev/null || :
@@ -44,40 +42,15 @@ update-desktop-database &> /dev/null || :
 update-desktop-database &> /dev/null || :
 
 %files -f %{name}.lang
-%license COPYING
-%doc NEWS
+%doc COPYING NEWS
+
 %{_bindir}/%{name}
 %{_bindir}/gnome-thumbnail-font
-%{_datadir}/applications/org.gnome.font-viewer.desktop
-%{_datadir}/dbus-1/services/org.gnome.font-viewer.service
-%{_datadir}/metainfo/org.gnome.font-viewer.appdata.xml
+%{_datadir}/applications/%{name}.desktop
 %{_datadir}/thumbnailers/%{name}.thumbnailer
 
+
 %changelog
-* Tue Mar 13 2018 Kalev Lember <klember@redhat.com> - 3.28.0-1
-- Update to 3.28.0
-- Resolves: #1568172
-
-* Thu Feb 23 2017 Matthias Clasen <mclasen@redhat.com> - 3.22.0-1
-- Rebase to 3.22.0
-  Resolves rhbz#1386894
-
-* Wed Jun 29 2016 Matthias Clasen <mclasen@redhat.com> - 3.14.1-4
-- Update translations
-  Resolves: #1304286
-
-* Fri Jun 26 2015 Ray Strode <rstrode@redhat.com> - 3.14.1-3
-- Add backward compat desktop file for user mime associations
-  Related: #1174572 1235413
-
-* Thu May 21 2015 Matthias Clasen <mclasen@redhat.com> - 3.14.1-2
-- Rebuild against new gnome-desktop3
-Related: #1174572
-
-* Mon Mar 23 2015 Richard Hughes <rhughes@redhat.com> - 3.14.1-1
-- Update to 3.14.1
-- Resolves: #1174572
-
 * Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 3.8.0-3
 - Mass rebuild 2014-01-24
 

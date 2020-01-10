@@ -12,7 +12,9 @@
  * General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * The Sushi project hereby grant permission for non-gpl compatible GStreamer
  * plugins to be used and distributed together with GStreamer and Sushi. This
@@ -32,13 +34,11 @@
 
 FT_Face sushi_new_ft_face_from_uri (FT_Library library,
                                     const gchar *uri,
-                                    gint face_index,
                                     gchar **contents,
                                     GError **error);
 
 void sushi_new_ft_face_from_uri_async (FT_Library library,
                                        const gchar *uri,
-                                       gint face_index,
                                        GAsyncReadyCallback callback,
                                        gpointer user_data);
 

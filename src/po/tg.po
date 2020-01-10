@@ -1,48 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2015
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Tajik Gnome\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "font-viewer&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-13 19:53+0000\n"
-"PO-Revision-Date: 2015-03-14 10:18+0500\n"
+"POT-Creation-Date: 2013-03-05 02:48+0000\n"
+"PO-Revision-Date: 2013-01-19 17:39+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: \n"
-"Language: tg\n"
+"Language: Tajik\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
-
-#: ../data/org.gnome.font-viewer.appdata.xml.in.h:1
-msgid ""
-"GNOME Font Viewer shows you the fonts installed on your computer for your "
-"use as thumbnails. Selecting any thumbnails shows the full view of how the "
-"font would look under various sizes."
-msgstr ""
-"Барномаи пешнамоиши шрифтҳои GNOME ҳамаи шрифтҳои насбшударо дар компютери "
-"шумо ҳамчун эскизҳо намоиш медиҳад. Вақте, ки эскизи шрифтеро интихоб "
-"мекунед, метавонед бинед ки чӣ тавр шрифти интихобшуда дар андозаҳои гуногун "
-"менамояд."
-
-#: ../data/org.gnome.font-viewer.appdata.xml.in.h:2
-msgid ""
-"GNOME Font Viewer also supports installing new font files downloaded in the ."
-"ttf and other formats. Fonts may be installed only for your use or made "
-"available to all users on the computer."
-msgstr ""
-"Барномаи пешнамоиши шрифтҳои GNOME инчунин насби файлҳои шрифтҳои навро дар "
-"формати .ttf ва форматҳои дигар дастгирӣ мекунад. Шумо метавонед шрифтҳоро "
-"танҳо барои ниёзҳои худ насб кунед ё онҳоро барои корбарони дигар дар "
-"компютери шумо дастрас кунед."
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../src/font-thumbnailer.c:189
 msgid "Text to thumbnail (default: Aa)"
-msgstr "Матн ба эскизи шрифт (пешфарз: Aa)"
+msgstr "Матн ба пешнамоиши кучак (пешфарз: Aa)"
 
 #: ../src/font-thumbnailer.c:189
 msgid "TEXT"
@@ -50,7 +28,7 @@ msgstr "МАТН"
 
 #: ../src/font-thumbnailer.c:191
 msgid "Thumbnail size (default: 128)"
-msgstr "Андозаи эскизи шрифт (пешфарз: 128)"
+msgstr "Андозаи пешнамоиши кучак (пешфарз: 128)"
 
 #: ../src/font-thumbnailer.c:191
 msgid "SIZE"
@@ -58,106 +36,81 @@ msgstr "АНДОЗА"
 
 #: ../src/font-thumbnailer.c:193
 msgid "FONT-FILE OUTPUT-FILE"
-msgstr "ФАЙЛИ-ШРИФТ ФАЙЛИ-БАРОРИШ"
+msgstr ""
 
 #: ../src/font-view-app-menu.ui.h:1
-msgid "About"
-msgstr "Дар бораи барнома"
+msgid "About Font Viewer"
+msgstr "Дар бораи брномаи пшнамоиши шрифтҳо"
 
 #: ../src/font-view-app-menu.ui.h:2
 msgid "Quit"
 msgstr "Баромад"
 
-#: ../src/font-view.c:76
-#| msgid "Font Viewer"
-msgid "GNOME Font Viewer"
-msgstr "Пешнамоиши шрифти GNOME"
-
-#: ../src/font-view.c:84
-msgid "Show the application's version"
-msgstr "Намоиш додани версияи барнома"
-
-#: ../src/font-view.c:196
+#: ../src/font-view.c:178
 msgid "Name"
 msgstr "Ном"
 
-#: ../src/font-view.c:199
+#: ../src/font-view.c:181
 msgid "Style"
 msgstr "Сабк"
 
-#: ../src/font-view.c:209
+#: ../src/font-view.c:191
 msgid "Type"
 msgstr "Навъ"
 
-#: ../src/font-view.c:254 ../src/font-view.c:273
+#: ../src/font-view.c:236 ../src/font-view.c:255
 msgid "Version"
 msgstr "Версия"
 
-#: ../src/font-view.c:259 ../src/font-view.c:279
+#: ../src/font-view.c:241 ../src/font-view.c:261
 msgid "Copyright"
 msgstr "Ҳуқуқи муаллиф"
 
-#: ../src/font-view.c:264
+#: ../src/font-view.c:246
 msgid "Description"
 msgstr "Тавсиф"
 
-#: ../src/font-view.c:295
+#: ../src/font-view.c:274
 msgid "Install Failed"
 msgstr "Насбкунӣ ба анҷом нарасид"
 
-#: ../src/font-view.c:302
+#: ../src/font-view.c:280
 msgid "Installed"
 msgstr "Насбшуда"
 
-#: ../src/font-view.c:306 ../src/font-view.c:551
+#: ../src/font-view.c:283 ../src/font-view.c:517
 msgid "Install"
 msgstr "Насб кардан"
 
-#: ../src/font-view.c:440
+#: ../src/font-view.c:416
 msgid "This font could not be displayed."
 msgstr "Ин шрифт намоиш дода намешавад."
 
-#: ../src/font-view.c:504 ../src/font-view.c:562
+#: ../src/font-view.c:509
 msgid "Info"
 msgstr "Маълумот"
 
-#: ../src/font-view.c:579
+#: ../src/font-view.c:524
 msgid "Back"
 msgstr "Бозгашт"
 
-#: ../src/font-view.c:669
+#: ../src/font-view.c:611
 msgid "All Fonts"
 msgstr "Ҳамаи шрифтҳо"
 
-#: ../src/font-view.c:787 ../src/org.gnome.font-viewer.desktop.in.in.h:1
+#: ../src/font-view.c:729 ../src/font-view.c:768
+#: ../src/gnome-font-viewer.desktop.in.in.h:1
 msgid "Font Viewer"
-msgstr "Барномаи пешнамоиши шрифт"
+msgstr "Барномаи Намоиши шрифтҳо"
 
-#: ../src/font-view.c:788 ../src/org.gnome.font-viewer.desktop.in.in.h:2
+#: ../src/font-view.c:730 ../src/gnome-font-viewer.desktop.in.in.h:2
 msgid "View fonts on your system"
 msgstr "Намоиш додани шрифтҳои системаи шумо"
 
-#: ../src/font-view.c:790
+#: ../src/font-view.c:732
 msgid "translator-credits"
-msgstr "Victor Ibragimov"
-
-#: ../src/font-view.c:929
-msgid "[FILE...]"
-msgstr "[ФАЙЛ...]"
-
-#. I18N: The '%s' is replaced with the command name.
-#: ../src/font-view.c:937
-#, c-format
-msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
-"Барои дидани рӯйхати пурраи имконоти хати фармон, '%s --help'-ро иҷро кунед."
 
-#: ../src/org.gnome.font-viewer.desktop.in.in.h:3
+#: ../src/gnome-font-viewer.desktop.in.in.h:3
 msgid "fonts;fontface;"
-msgstr "шрифт;намуди шрифт;"
-
-#~ msgid "_Close"
-#~ msgstr "_Пӯшидан"
-
-#~ msgid "About Font Viewer"
-#~ msgstr "Дар бораи брномаи пешнамоиши шрифт"
+msgstr ""

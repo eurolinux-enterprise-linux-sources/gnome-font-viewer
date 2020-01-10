@@ -3,49 +3,24 @@
 # Distributed under the same licence as the gnome-utils package
 # Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1999.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# António Lima <amrlima@gmail.com>, 2013.
-# Tiago S. <almosthumane@portugalmail.pt>, 2015.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.8\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"font-viewer&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-06-07 19:09+0000\n"
-"PO-Revision-Date: 2015-06-10 08:56+0100\n"
-"Last-Translator: Tiago S. <almosthumane@portugalmail.pt>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-12 22:53+0000\n"
+"PO-Revision-Date: 2013-03-12 22:55+0000\n"
+"Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
-
-#: ../data/org.gnome.font-viewer.appdata.xml.in.h:1
-msgid ""
-"GNOME Font Viewer shows you the fonts installed on your computer for your "
-"use as thumbnails. Selecting any thumbnails shows the full view of how the "
-"font would look under various sizes."
-msgstr ""
-"O Visualizador de tipos de letra GNOME mostra-lhe os tipos de letra "
-"instalados no seu computador para uso, como miniaturas. Selecione qualquer "
-"uma das miniaturas para ver como o tipo de letra parece em diversos tamanhos."
-
-#: ../data/org.gnome.font-viewer.appdata.xml.in.h:2
-msgid ""
-"GNOME Font Viewer also supports installing new font files downloaded in the ."
-"ttf and other formats. Fonts may be installed only for your use or made "
-"available to all users on the computer."
-msgstr ""
-"O Visualizador de tipos de letra GNOME também suporta a instalação de novos "
-"ficheiros de tipos de letra transferidos em .ttf ou noutros formatos. Os "
-"tipos de letra podem ser instalados somente para o seu uso ou tornados "
-"disponíveis para todos os utilizadores do computador."
 
 #: ../src/font-thumbnailer.c:189
 msgid "Text to thumbnail (default: Aa)"
-msgstr "Texto para miniatura (predefinição: Aa)"
+msgstr "Texto para amostragem (omissão: Aa)"
 
 #: ../src/font-thumbnailer.c:189
 msgid "TEXT"
@@ -53,7 +28,7 @@ msgstr "TEXTO"
 
 #: ../src/font-thumbnailer.c:191
 msgid "Thumbnail size (default: 128)"
-msgstr "Tamanho da miniatura (predefinição: 128)"
+msgstr "Texto para amostragem (omissão: 128)"
 
 #: ../src/font-thumbnailer.c:191
 msgid "SIZE"
@@ -61,111 +36,84 @@ msgstr "TAMANHO"
 
 #: ../src/font-thumbnailer.c:193
 msgid "FONT-FILE OUTPUT-FILE"
-msgstr "FICHEIRO-LETRA FICHEIRO-SAÍDA"
+msgstr "FICHEIRO-FONTE FICHEIRO-SAÍDA"
 
 #: ../src/font-view-app-menu.ui.h:1
-msgid "About"
-msgstr "Sobre"
+msgid "About Font Viewer"
+msgstr "Sobre o Visualizador de Fontes"
 
 #: ../src/font-view-app-menu.ui.h:2
 msgid "Quit"
 msgstr "Sair"
 
-#: ../src/font-view.c:76
-#| msgid "Font Viewer"
-msgid "GNOME Font Viewer"
-msgstr "Visualizador de letras"
-
-#: ../src/font-view.c:84
-msgid "Show the application's version"
-msgstr "Mostrar a versão da aplicação"
-
-#: ../src/font-view.c:196
+#: ../src/font-view.c:178
 msgid "Name"
 msgstr "Nome"
 
-#: ../src/font-view.c:199
+#: ../src/font-view.c:181
 msgid "Style"
 msgstr "Estilo"
 
-#: ../src/font-view.c:209
+#: ../src/font-view.c:191
 msgid "Type"
 msgstr "Tipo"
 
-#: ../src/font-view.c:254 ../src/font-view.c:273
+#: ../src/font-view.c:236 ../src/font-view.c:255
 msgid "Version"
 msgstr "Versão"
 
-#: ../src/font-view.c:259 ../src/font-view.c:279
+#: ../src/font-view.c:241 ../src/font-view.c:261
 msgid "Copyright"
-msgstr "Direitos de autor"
+msgstr "Direitos de Autor"
 
-#: ../src/font-view.c:264
+#: ../src/font-view.c:246
 msgid "Description"
 msgstr "Descrição"
 
-#: ../src/font-view.c:295
+#: ../src/font-view.c:274
 msgid "Install Failed"
-msgstr "Falha ao instalar"
+msgstr "Falha ao Instalar"
 
-#: ../src/font-view.c:302
+#: ../src/font-view.c:280
 msgid "Installed"
 msgstr "Instalada"
 
-#: ../src/font-view.c:306 ../src/font-view.c:551
+#: ../src/font-view.c:283 ../src/font-view.c:517
 msgid "Install"
 msgstr "Instalar"
 
-#: ../src/font-view.c:440
+#: ../src/font-view.c:416
 msgid "This font could not be displayed."
-msgstr "Impossível mostrar esta letra."
+msgstr "Incapaz de apresentar esta fonte."
 
-#: ../src/font-view.c:504 ../src/font-view.c:562
+#: ../src/font-view.c:509
 msgid "Info"
 msgstr "Informação"
 
-#: ../src/font-view.c:579
+#: ../src/font-view.c:524
 msgid "Back"
-msgstr "Recuar"
+msgstr "Retroceder"
 
-#: ../src/font-view.c:669
+#: ../src/font-view.c:611
 msgid "All Fonts"
-msgstr "Todas as letras"
+msgstr "Todas as Fontes"
 
-#: ../src/font-view.c:787 ../src/org.gnome.font-viewer.desktop.in.in.h:1
+#: ../src/font-view.c:729 ../src/font-view.c:768
+#: ../src/gnome-font-viewer.desktop.in.in.h:1
 msgid "Font Viewer"
-msgstr "Visualizador de letras"
+msgstr "Visualizador de Fontes"
 
-#: ../src/font-view.c:788 ../src/org.gnome.font-viewer.desktop.in.in.h:2
+#: ../src/font-view.c:730 ../src/gnome-font-viewer.desktop.in.in.h:2
 msgid "View fonts on your system"
-msgstr "Visualize as letras no seu sistema"
+msgstr "Visualize as fontes no seu sistema"
 
-#: ../src/font-view.c:790
+#: ../src/font-view.c:732
 msgid "translator-credits"
-msgstr ""
-"Duarte Loreto <happyguy_pt@hotmail.com>\n"
-"Pedro Albuquerque <palbuquerque73@gmail.com>"
+msgstr "Duarte Loreto <happyguy_pt@hotmail.com>"
 
-#: ../src/font-view.c:929
-msgid "[FILE...]"
-msgstr "[FICHEIRO...]"
-
-#. I18N: The '%s' is replaced with the command name.
-#: ../src/font-view.c:937
-#, c-format
-msgid "Run '%s --help' to see a full list of available command line options."
-msgstr ""
-"Execute \"%s --help\" para ver uma lista de opções da linha de comandos."
-
-#: ../src/org.gnome.font-viewer.desktop.in.in.h:3
+#: ../src/gnome-font-viewer.desktop.in.in.h:3
 msgid "fonts;fontface;"
-msgstr "tipos de letra;letras;"
-
-#~ msgid "_Close"
-#~ msgstr "_Fechar"
-
-#~ msgid "About Font Viewer"
-#~ msgstr "Sobre o Visualizador de Fontes"
+msgstr "fontes;tipos de fonte;"
 
 #~ msgid "Font size (default: 64)"
 #~ msgstr "Tamanho da fonte (omissão: 64)"

@@ -33,7 +33,6 @@ G_BEGIN_DECLS
 typedef enum {
   COLUMN_NAME,
   COLUMN_PATH,
-  COLUMN_FACE_INDEX,
   COLUMN_ICON,
   COLUMN_COLLATION_KEY,
   NUM_COLUMNS
@@ -59,11 +58,8 @@ GType font_view_model_get_type (void);
 GtkTreeModel * font_view_model_new (void);
 
 gboolean font_view_model_get_iter_for_face (FontViewModel *self,
-                                            FT_Face        face,
-                                            GtkTreeIter   *iter);
-
-void     font_view_model_set_scale_factor  (FontViewModel *self,
-                                            gint           scale_factor);
+                                            FT_Face face,
+                                            GtkTreeIter *iter);
 
 G_END_DECLS
 
