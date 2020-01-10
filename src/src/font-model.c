@@ -50,12 +50,12 @@ struct _FontViewModelPrivate {
 
     FT_Library library;
 
-    GList *monitors;
     cairo_surface_t *fallback_icon;
     GCancellable *cancellable;
 
     gint scale_factor;
     guint font_list_idle_id;
+    guint fontconfig_update_id;
 };
 
 enum {
@@ -357,19 +357,23 @@ ensure_fallback_icon (FontViewModel *self)
 {
     GtkIconTheme *icon_theme;
     GtkIconInfo *icon_info;
+    const char *mimetype = "font/ttf";
     GIcon *icon = NULL;
 
     if (self->priv->fallback_icon != NULL)
         return;
 
     icon_theme = gtk_icon_theme_get_default ();
-    icon = g_content_type_get_icon ("application/x-font-ttf");
+    icon = g_content_type_get_icon (mimetype);
     icon_info = gtk_icon_theme_lookup_by_gicon_for_scale (icon_theme, icon,
-                                                          128, self->priv->scale_factor, 0);
+                                                          128, self->priv->scale_factor,
+                                                          GTK_ICON_LOOKUP_FORCE_SIZE);
     g_object_unref (icon);
 
-    if (!icon_info)
+    if (!icon_info) {
+        g_warning ("Fallback icon for %s not found", mimetype);
         return;
+    }
 
     self->priv->fallback_icon = gtk_icon_info_load_surface (icon_info, NULL, NULL);
     g_object_unref (icon_info);
@@ -495,6 +499,7 @@ ensure_font_list (FontViewModel *self)
         self->priv->font_list = NULL;
     }
 
+    FcPatternAddBool (pat, FC_SCALABLE, FcTrue);
     self->priv->font_list = FcFontList (NULL, pat, os);
 
     g_mutex_unlock (&self->priv->font_list_mutex);
@@ -516,6 +521,8 @@ static gboolean
 ensure_font_list_idle (gpointer user_data)
 {
     FontViewModel *self = user_data;
+
+    self->priv->font_list_idle_id = 0;
     ensure_font_list (self);
 
     return FALSE;
@@ -556,47 +563,14 @@ font_view_model_sort_func (GtkTreeModel *model,
 }
 
 static void
-file_monitor_changed_cb (GFileMonitor *monitor,
-                         GFile *file,
-                         GFile *other_file,
-                         GFileMonitorEvent event,
-                         gpointer user_data)
+connect_to_fontconfig_updates (FontViewModel *self)
 {
-    FontViewModel *self = user_data;
+    GtkSettings *settings;
 
-    if (event == G_FILE_MONITOR_EVENT_CHANGES_DONE_HINT ||
-        event == G_FILE_MONITOR_EVENT_DELETED ||
-        event == G_FILE_MONITOR_EVENT_CREATED)
-        ensure_font_list (self);
-}
-
-static void
-create_file_monitors (FontViewModel *self)
-{
-    FcConfig *config;
-    FcStrList *str_list;
-    FcChar8 *path;
-    GFile *file;
-    GFileMonitor *monitor;
-
-    config = FcConfigGetCurrent ();
-    str_list = FcConfigGetFontDirs (config);
-
-    while ((path = FcStrListNext (str_list)) != NULL) {
-        file = g_file_new_for_path ((const gchar *) path);
-        monitor = g_file_monitor (file, G_FILE_MONITOR_NONE,
-                                  NULL, NULL);
-
-        if (monitor != NULL) {
-            self->priv->monitors = g_list_prepend (self->priv->monitors, monitor);
-            g_signal_connect (monitor, "changed",
-                              G_CALLBACK (file_monitor_changed_cb), self);
-        }
-
-        g_object_unref (file);
-    }
-
-    FcStrListDone (str_list);
+    settings = gtk_settings_get_default ();
+    self->priv->fontconfig_update_id =
+        g_signal_connect_swapped (settings, "notify::gtk-fontconfig-timestamp",
+                                  G_CALLBACK (ensure_font_list), self);
 }
 
 static void
@@ -624,13 +598,14 @@ font_view_model_init (FontViewModel *self)
                                      NULL, NULL);
 
     schedule_update_font_list (self);
-    create_file_monitors (self);
+    connect_to_fontconfig_updates (self);
 }
 
 static void
 font_view_model_finalize (GObject *obj)
 {
     FontViewModel *self = FONT_VIEW_MODEL (obj);
+    GtkSettings *settings;
 
     if (self->priv->cancellable) {
         g_cancellable_cancel (self->priv->cancellable);
@@ -652,9 +627,14 @@ font_view_model_finalize (GObject *obj)
         self->priv->font_list_idle_id = 0;
     }
 
+    if (self->priv->fontconfig_update_id != 0) {
+        settings = gtk_settings_get_default ();
+        g_signal_handler_disconnect (settings, self->priv->fontconfig_update_id);
+        self->priv->fontconfig_update_id = 0;
+    }
+
     g_mutex_clear (&self->priv->font_list_mutex);
     g_clear_pointer (&self->priv->fallback_icon, cairo_surface_destroy);
-    g_list_free_full (self->priv->monitors, (GDestroyNotify) g_object_unref);
 
     G_OBJECT_CLASS (font_view_model_parent_class)->finalize (obj);
 }

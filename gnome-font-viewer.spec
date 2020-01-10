@@ -1,7 +1,7 @@
 %global         release_version %(echo %{version} | awk -F. '{print $1"."$2}')
 
 Name:           gnome-font-viewer
-Version:        3.22.0
+Version:        3.28.0
 Release:        1%{?dist}
 Summary:        Utility for previewing fonts for GNOME
 
@@ -11,10 +11,11 @@ URL:            http://www.gnome.org/gnome-3/
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/gnome-font-viewer/%{release_version}/%{name}-%{version}.tar.xz
 
 BuildRequires:  gnome-desktop3-devel
+BuildRequires:  gettext
 BuildRequires:  gtk3-devel
-BuildRequires:  intltool
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
+BuildRequires:  meson
 
 %description
 Use gnome-font-viewer, the Font Viewer, to preview fonts and display
@@ -22,15 +23,14 @@ information about a specified font. You can use the Font Viewer to display the
 name, style, type, size, version and copyright of the font.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%configure --disable-silent-rules
-make %{?_smp_mflags}
-
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %find_lang %{name} --with-gnome
 
@@ -46,16 +46,18 @@ update-desktop-database &> /dev/null || :
 %files -f %{name}.lang
 %license COPYING
 %doc NEWS
-
 %{_bindir}/%{name}
 %{_bindir}/gnome-thumbnail-font
-%{_datadir}/appdata/org.gnome.font-viewer.appdata.xml
 %{_datadir}/applications/org.gnome.font-viewer.desktop
 %{_datadir}/dbus-1/services/org.gnome.font-viewer.service
+%{_datadir}/metainfo/org.gnome.font-viewer.appdata.xml
 %{_datadir}/thumbnailers/%{name}.thumbnailer
 
-
 %changelog
+* Tue Mar 13 2018 Kalev Lember <klember@redhat.com> - 3.28.0-1
+- Update to 3.28.0
+- Resolves: #1568172
+
 * Thu Feb 23 2017 Matthias Clasen <mclasen@redhat.com> - 3.22.0-1
 - Rebase to 3.22.0
   Resolves rhbz#1386894

@@ -1,3 +1,49 @@
+GNOME Font Viewer - 3.28.0
+-------------------------------------------------------------------------------
+• Translation updates
+
+GNOME Font Viewer - 3.27.90
+-------------------------------------------------------------------------------
+• Fix icon loading
+• Allow searching for fonts
+• Allow scrolling in both directions
+• Turn the info dialog into a page in the main window
+• Translation updates
+
+GNOME Font Viewer - 3.27.0
+-------------------------------------------------------------------------------
+• Show more general font information
+• Show OpenType font variation information
+• Show OpenType layout feature information
+• Handle ttf and otf mimetypes (#788383)
+• Fix a crash (#789511)
+• Translation updates
+
+GNOME Font Viewer - 3.26.0
+-------------------------------------------------------------------------------
+• Rename to "Fonts" in AppData file too (#786128, Jeremy Bicha)
+• Translation updates
+
+GNOME Font Viewer - 3.25.90
+-------------------------------------------------------------------------------
+• Use "Fonts" as user-visible application name (#783640, Jeremy Bicha)
+• Port to use the Meson build system (#783613, Jeremy Bicha)
+• Fix regression during startup sequence (#782738)
+• Don't use gnome-common or intltool (#783611, Jeremy Bicha)
+• Unconditionally source config.h (#783612, Jeremy Bicha)
+• Translation updates
+
+GNOME Font Viewer - 3.24.0
+-------------------------------------------------------------------------------
+• Improve usage of GApplication API
+• Translation updates
+
+GNOME Font Viewer - 3.23.91
+-------------------------------------------------------------------------------
+
+• Listen to fontconfig timestamp notifications instead of using file monitors
+• Only show scalable fonts (#771857, Michael Catanzaro)
+
 GNOME Font Viewer - 3.22.0
 -------------------------------------------------------------------------------
 
