@@ -27,10 +27,12 @@
 #include "sushi-font-widget.h"
 #include "sushi-font-loader.h"
 
+#include <hb-glib.h>
 #include <math.h>
 
 enum {
   PROP_URI = 1,
+  PROP_FACE_INDEX,
   NUM_PROPERTIES
 };
 
@@ -42,6 +44,7 @@ enum {
 
 struct _SushiFontWidgetPrivate {
   gchar *uri;
+  gint face_index;
 
   FT_Library library;
   FT_Face face;
@@ -85,6 +88,7 @@ text_to_glyphs (cairo_t *cr,
   hb_font_t *hb_font;
   gdouble x = 0, y = 0;
   gint i;
+  gdouble x_scale, y_scale;
 
   *num_glyphs = 0;
   *glyphs = NULL;
@@ -94,6 +98,9 @@ text_to_glyphs (cairo_t *cr,
   cairo_scaled_font_t *cr_font = cairo_get_scaled_font (cr);
   ft_face = cairo_ft_scaled_font_lock_face (cr_font);
   hb_font = hb_ft_font_create (ft_face, NULL);
+
+  cairo_surface_t *target = cairo_get_target (cr);
+  cairo_surface_get_device_scale (target, &x_scale, &y_scale);
 
   /* We abuse pango itemazation to split text into script and direction
    * runs, since we use our fonts directly no through pango, we don't
@@ -139,10 +146,10 @@ text_to_glyphs (cairo_t *cr,
 
     for (i = 0; i < n; i++) {
       (*glyphs)[*num_glyphs + i].index = hb_glyphs[i].codepoint;
-      (*glyphs)[*num_glyphs + i].x = x + (hb_positions[i].x_offset / 64.);
-      (*glyphs)[*num_glyphs + i].y = y - (hb_positions[i].y_offset / 64.);
-      x += (hb_positions[i].x_advance / 64.);
-      y -= (hb_positions[i].y_advance / 64.);
+      (*glyphs)[*num_glyphs + i].x = x + (hb_positions[i].x_offset / (64. * x_scale));
+      (*glyphs)[*num_glyphs + i].y = y - (hb_positions[i].y_offset / (64. * y_scale));
+      x += (hb_positions[i].x_advance / (64. * x_scale));
+      y -= (hb_positions[i].y_advance / (64. * y_scale));
     }
 
     *num_glyphs += n;
@@ -228,8 +235,7 @@ check_font_contain_text (FT_Face face,
                          const gchar *text)
 {
   gunichar *string;
-  glong len, idx, map;
-  FT_CharMap charmap;
+  glong len, idx;
   gboolean retval = TRUE;
 
   string = g_utf8_to_ucs4_fast (text, -1, &len);
@@ -636,7 +642,8 @@ sushi_font_widget_draw (GtkWidget *drawing_area,
 
   for (i = 0; i < n_sizes; i++) {
     cairo_set_font_size (cr, sizes[i]);
-    draw_string (self, cr, padding, self->priv->sample_string, &pos_y);
+    if (self->priv->sample_string !=  NULL)
+      draw_string (self, cr, padding, self->priv->sample_string, &pos_y);
     if (pos_y > allocated_height)
       break;
   }
@@ -674,23 +681,14 @@ font_face_async_ready_cb (GObject *object,
   g_signal_emit (self, signals[LOADED], 0);
 }
 
-static void
-load_font_face (SushiFontWidget *self)
+void
+sushi_font_widget_load (SushiFontWidget *self)
 {
   sushi_new_ft_face_from_uri_async (self->priv->library,
                                     self->priv->uri,
+                                    self->priv->face_index,
                                     font_face_async_ready_cb,
                                     self);
-}
-
-static void
-sushi_font_widget_set_uri (SushiFontWidget *self,
-                           const gchar *uri)
-{
-  g_free (self->priv->uri);
-  self->priv->uri = g_strdup (uri);
-
-  load_font_face (self);
 }
 
 static void
@@ -723,6 +721,9 @@ sushi_font_widget_get_property (GObject *object,
   case PROP_URI:
     g_value_set_string (value, self->priv->uri);
     break;
+  case PROP_FACE_INDEX:
+    g_value_set_int (value, self->priv->face_index);
+    break;
   default:
     G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
     break;
@@ -739,7 +740,10 @@ sushi_font_widget_set_property (GObject *object,
 
   switch (prop_id) {
   case PROP_URI:
-    sushi_font_widget_set_uri (self, g_value_get_string (value));
+    self->priv->uri = g_value_dup_string (value);
+    break;
+  case PROP_FACE_INDEX:
+    self->priv->face_index = g_value_get_int (value);
     break;
   default:
     G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -772,6 +776,16 @@ sushi_font_widget_finalize (GObject *object)
 }
 
 static void
+sushi_font_widget_constructed (GObject *object)
+{
+  SushiFontWidget *self = SUSHI_FONT_WIDGET (object);
+
+  sushi_font_widget_load (self);
+
+  G_OBJECT_CLASS (sushi_font_widget_parent_class)->constructed (object);
+}
+
+static void
 sushi_font_widget_class_init (SushiFontWidgetClass *klass)
 {
   GObjectClass *oclass = G_OBJECT_CLASS (klass);
@@ -780,6 +794,7 @@ sushi_font_widget_class_init (SushiFontWidgetClass *klass)
   oclass->finalize = sushi_font_widget_finalize;
   oclass->set_property = sushi_font_widget_set_property;
   oclass->get_property = sushi_font_widget_get_property;
+  oclass->constructed = sushi_font_widget_constructed;
 
   wclass->draw = sushi_font_widget_draw;
   wclass->get_preferred_width = sushi_font_widget_get_preferred_width;
@@ -788,7 +803,12 @@ sushi_font_widget_class_init (SushiFontWidgetClass *klass)
   properties[PROP_URI] =
     g_param_spec_string ("uri",
                          "Uri", "Uri",
-                         NULL, G_PARAM_READWRITE);
+                         NULL, G_PARAM_READWRITE | G_PARAM_CONSTRUCT);
+  properties[PROP_FACE_INDEX] =
+    g_param_spec_int ("face-index",
+                      "Face index", "Face index",
+                      0, G_MAXINT,
+                      0, G_PARAM_READWRITE | G_PARAM_CONSTRUCT);
 
   signals[LOADED] =
     g_signal_new ("loaded",
@@ -810,10 +830,11 @@ sushi_font_widget_class_init (SushiFontWidgetClass *klass)
 }
 
 SushiFontWidget *
-sushi_font_widget_new (const gchar *uri)
+sushi_font_widget_new (const gchar *uri, gint face_index)
 {
   return g_object_new (SUSHI_TYPE_FONT_WIDGET,
                        "uri", uri,
+                       "face-index", face_index,
                        NULL);
 }
 

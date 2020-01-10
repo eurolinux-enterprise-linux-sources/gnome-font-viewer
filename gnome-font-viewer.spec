@@ -1,23 +1,20 @@
-Name:           gnome-font-viewer
-Version:        3.14.1
 %global         release_version %(echo %{version} | awk -F. '{print $1"."$2}')
-Release:        4%{?dist}
+
+Name:           gnome-font-viewer
+Version:        3.22.0
+Release:        1%{?dist}
 Summary:        Utility for previewing fonts for GNOME
 
-Group:          Applications/System
 License:        GPLv2+
 #No URL for the package specifically, as of now
 URL:            http://www.gnome.org/gnome-3/
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/gnome-font-viewer/%{release_version}/%{name}-%{version}.tar.xz
-Patch0:         mistranslation.patch
-# upstream fix
-Patch1:         0001-Add-help-and-version.patch
-Patch2:         translations.patch
 
 BuildRequires:  gnome-desktop3-devel
 BuildRequires:  gtk3-devel
 BuildRequires:  intltool
 BuildRequires:  desktop-file-utils
+BuildRequires:  libappstream-glib
 
 %description
 Use gnome-font-viewer, the Font Viewer, to preview fonts and display
@@ -26,9 +23,6 @@ name, style, type, size, version and copyright of the font.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
 %configure --disable-silent-rules
@@ -36,11 +30,7 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT
-
-# for backward compatibility with user defined file associations
-cp $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.font-viewer.desktop $RPM_BUILD_ROOT%{_datadir}/applications/gnome-font-viewer.desktop
-echo NoDisplay=true >> $RPM_BUILD_ROOT%{_datadir}/applications/gnome-font-viewer.desktop
+%make_install
 
 %find_lang %{name} --with-gnome
 
@@ -54,17 +44,22 @@ update-desktop-database &> /dev/null || :
 update-desktop-database &> /dev/null || :
 
 %files -f %{name}.lang
-%doc COPYING NEWS
+%license COPYING
+%doc NEWS
 
 %{_bindir}/%{name}
 %{_bindir}/gnome-thumbnail-font
 %{_datadir}/appdata/org.gnome.font-viewer.appdata.xml
-%{_datadir}/applications/*.desktop
+%{_datadir}/applications/org.gnome.font-viewer.desktop
 %{_datadir}/dbus-1/services/org.gnome.font-viewer.service
 %{_datadir}/thumbnailers/%{name}.thumbnailer
 
 
 %changelog
+* Thu Feb 23 2017 Matthias Clasen <mclasen@redhat.com> - 3.22.0-1
+- Rebase to 3.22.0
+  Resolves rhbz#1386894
+
 * Wed Jun 29 2016 Matthias Clasen <mclasen@redhat.com> - 3.14.1-4
 - Update translations
   Resolves: #1304286

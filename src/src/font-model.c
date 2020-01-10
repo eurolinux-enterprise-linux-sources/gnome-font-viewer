@@ -137,6 +137,8 @@ typedef struct {
     FontViewModel *self;
     GFile *font_file;
     gchar *font_path;
+    gint face_index;
+    gchar *uri;
     GdkPixbuf *pixbuf;
     GtkTreeIter iter;
 } ThumbInfoData;
@@ -150,6 +152,7 @@ thumb_info_data_free (gpointer user_data)
     g_object_unref (thumb_info->font_file);
     g_clear_object (&thumb_info->pixbuf);
     g_free (thumb_info->font_path);
+    g_free (thumb_info->uri);
 
     g_slice_free (ThumbInfoData, thumb_info);
 }
@@ -179,13 +182,11 @@ create_thumbnail (ThumbInfoData *thumb_info)
 {
     GFile *file = thumb_info->font_file;
     GnomeDesktopThumbnailFactory *factory;
-    gchar *uri;
     guint64 mtime;
 
     GdkPixbuf *pixbuf = NULL;
     GFileInfo *info = NULL;
 
-    uri = g_file_get_uri (file);
     info = g_file_query_info (file, ATTRIBUTES_FOR_CREATING_THUMBNAIL,
                               G_FILE_QUERY_INFO_NONE,
                               NULL, NULL);
@@ -201,14 +202,14 @@ create_thumbnail (ThumbInfoData *thumb_info)
     factory = gnome_desktop_thumbnail_factory_new (GNOME_DESKTOP_THUMBNAIL_SIZE_LARGE);
     pixbuf = gnome_desktop_thumbnail_factory_generate_thumbnail
         (factory, 
-         uri, g_file_info_get_content_type (info));
+         thumb_info->uri, g_file_info_get_content_type (info));
 
     if (pixbuf != NULL)
         gnome_desktop_thumbnail_factory_save_thumbnail (factory, pixbuf,
-                                                        uri, (time_t) mtime);
+                                                        thumb_info->uri, (time_t) mtime);
     else
         gnome_desktop_thumbnail_factory_create_failed_thumbnail (factory,
-                                                                 uri, (time_t) mtime);
+                                                                 thumb_info->uri, (time_t) mtime);
 
   g_object_unref (factory);
 
@@ -228,16 +229,17 @@ create_thumbnail (ThumbInfoData *thumb_info)
   return pixbuf;
 }
 
-static gboolean
-ensure_thumbnails_job (GIOSchedulerJob *job,
-                       GCancellable *cancellable,
-                       gpointer user_data)
+static void
+ensure_thumbnails_job (GTask *task,
+                       gpointer source_object,
+                       gpointer user_data,
+                       GCancellable *cancellable)
 {
     GList *thumb_infos = user_data, *l;
 
     for (l = thumb_infos; l != NULL; l = l->next) {
         gboolean thumb_failed;
-        const gchar *thumb_path;
+        gchar *thumb_path = NULL;
         ThumbInfoData *thumb_info = l->data;
 
         GError *error = NULL;
@@ -247,26 +249,54 @@ ensure_thumbnails_job (GIOSchedulerJob *job,
         GdkPixbuf *pixbuf = NULL;
         gint scale_factor = thumb_info->self->priv->scale_factor;
 
-        info = g_file_query_info (thumb_info->font_file,
-                                  ATTRIBUTES_FOR_EXISTING_THUMBNAIL,
-                                  G_FILE_QUERY_INFO_NONE,
-                                  NULL, &error);
+        if (thumb_info->face_index == 0) {
+            thumb_info->uri = g_file_get_uri (thumb_info->font_file);
+            info = g_file_query_info (thumb_info->font_file,
+                                      ATTRIBUTES_FOR_EXISTING_THUMBNAIL,
+                                      G_FILE_QUERY_INFO_NONE,
+                                      NULL, &error);
 
-        if (error != NULL) {
-            gchar *font_path;
+            if (error != NULL) {
+                gchar *font_path;
 
-            font_path = g_file_get_path (thumb_info->font_file);
-            g_debug ("Can't query info for file %s: %s\n", font_path, error->message);
-            g_free (font_path);
+                font_path = g_file_get_path (thumb_info->font_file);
+                g_debug ("Can't query info for file %s: %s\n", font_path, error->message);
+                g_free (font_path);
 
-            goto next;
+                goto next;
+            }
+
+            thumb_failed = g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_THUMBNAILING_FAILED);
+            if (thumb_failed)
+                goto next;
+
+            thumb_path = g_strdup (g_file_info_get_attribute_byte_string (info, G_FILE_ATTRIBUTE_THUMBNAIL_PATH));
+        } else {
+            gchar *file_uri;
+            gchar *checksum;
+            gchar *filename;
+
+            file_uri = g_file_get_uri (thumb_info->font_file);
+            thumb_info->uri = g_strdup_printf ("%s#0x%08X", file_uri, thumb_info->face_index);
+            g_free (file_uri);
+
+            checksum = g_compute_checksum_for_data (G_CHECKSUM_MD5,
+                                                    (const guchar *) thumb_info->uri,
+                                                    strlen (thumb_info->uri));
+            filename = g_strdup_printf ("%s.png", checksum);
+            g_free (checksum);
+
+            thumb_path = g_build_filename (g_get_user_cache_dir (),
+                                           "thumbnails",
+                                           "large",
+                                           filename,
+                                           NULL);
+            g_free (filename);
+
+            if (!g_file_test (thumb_path, G_FILE_TEST_IS_REGULAR)) {
+                g_clear_pointer (&thumb_path, g_free);
+            }
         }
-
-        thumb_failed = g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_THUMBNAILING_FAILED);
-        if (thumb_failed)
-            goto next;
-
-        thumb_path = g_file_info_get_attribute_byte_string (info, G_FILE_ATTRIBUTE_THUMBNAIL_PATH);
 
         if (thumb_path != NULL) {
             thumb_file = g_file_new_for_path (thumb_path);
@@ -297,25 +327,20 @@ ensure_thumbnails_job (GIOSchedulerJob *job,
         g_clear_object (&is);
         g_clear_object (&thumb_file);
         g_clear_object (&info);
+        g_clear_pointer (&thumb_path, g_free);
 
-        g_io_scheduler_job_send_to_mainloop_async (job, one_thumbnail_done,
-                                                   thumb_info, NULL);
+        g_main_context_invoke (NULL, one_thumbnail_done,
+                               thumb_info);
     }
 
     g_list_free (thumb_infos);
-
-    return FALSE;
 }
 
 typedef struct {
     gchar *font_path;
+    gint face_index;
     gchar *font_name;
 } FontInfoData;
-
-typedef struct {
-    GList *font_infos;
-    FontViewModel *self;
-} LoadFontInfosData;
 
 static void
 font_info_data_free (gpointer user_data)
@@ -328,21 +353,10 @@ font_info_data_free (gpointer user_data)
 }
 
 static void
-load_font_infos_data_free (gpointer user_data)
-{
-    LoadFontInfosData *data = user_data;
-
-    g_list_free_full (data->font_infos, font_info_data_free);
-    g_object_unref (data->self);
-    g_slice_free (LoadFontInfosData, data);
-}
-
-static void
 ensure_fallback_icon (FontViewModel *self)
 {
     GtkIconTheme *icon_theme;
     GtkIconInfo *icon_info;
-    GdkPixbuf *pix;
     GIcon *icon = NULL;
 
     if (self->priv->fallback_icon != NULL)
@@ -351,8 +365,7 @@ ensure_fallback_icon (FontViewModel *self)
     icon_theme = gtk_icon_theme_get_default ();
     icon = g_content_type_get_icon ("application/x-font-ttf");
     icon_info = gtk_icon_theme_lookup_by_gicon_for_scale (icon_theme, icon,
-                                                          128, self->priv->scale_factor,
-                                                          GTK_ICON_LOOKUP_GENERIC_FALLBACK);
+                                                          128, self->priv->scale_factor, 0);
     g_object_unref (icon);
 
     if (!icon_info)
@@ -362,25 +375,29 @@ ensure_fallback_icon (FontViewModel *self)
     g_object_unref (icon_info);
 }
 
-static gboolean
-font_infos_loaded (gpointer user_data)
+static void
+font_infos_loaded (GObject *source_object,
+                   GAsyncResult *result,
+                   gpointer user_data)
 {
-    LoadFontInfosData *data = user_data;
-    FontViewModel *self = data->self;
+    FontViewModel *self = FONT_VIEW_MODEL (source_object);
+    GTask *task = NULL;
     GList *l, *thumb_infos = NULL;
+    GList *font_infos = g_task_propagate_pointer (G_TASK (result), NULL);
 
     ensure_fallback_icon (self);
 
-    for (l = data->font_infos; l != NULL; l = l->next) {
+    for (l = font_infos; l != NULL; l = l->next) {
         FontInfoData *font_info = l->data;
         gchar *collation_key;
         GtkTreeIter iter;
         ThumbInfoData *thumb_info;
 
         collation_key = g_utf8_collate_key (font_info->font_name, -1);
-        gtk_list_store_insert_with_values (GTK_LIST_STORE (data->self), &iter, -1,
+        gtk_list_store_insert_with_values (GTK_LIST_STORE (self), &iter, -1,
                                            COLUMN_NAME, font_info->font_name,
                                            COLUMN_PATH, font_info->font_path,
+                                           COLUMN_FACE_INDEX, font_info->face_index,
                                            COLUMN_ICON, self->priv->fallback_icon,
                                            COLUMN_COLLATION_KEY, collation_key,
                                            -1);
@@ -388,39 +405,39 @@ font_infos_loaded (gpointer user_data)
 
         thumb_info = g_slice_new0 (ThumbInfoData);
         thumb_info->font_file = g_file_new_for_path (font_info->font_path);
+        thumb_info->face_index = font_info->face_index;
         thumb_info->iter = iter;
         thumb_info->self = g_object_ref (self);
 
+        font_info_data_free (font_info);
         thumb_infos = g_list_prepend (thumb_infos, thumb_info);
     }
 
     g_signal_emit (self, signals[CONFIG_CHANGED], 0);
+    g_list_free (font_infos);
 
-    g_io_scheduler_push_job (ensure_thumbnails_job,
-                             thumb_infos, NULL,
-                             G_PRIORITY_DEFAULT, NULL);
-
-    return FALSE;
+    task = g_task_new (NULL, NULL, NULL, NULL);
+    g_task_set_task_data (task, thumb_infos, NULL);
+    g_task_run_in_thread (task, ensure_thumbnails_job);
+    g_object_unref (task);
 }
 
-static gboolean
-load_font_infos (GIOSchedulerJob *job,
-                 GCancellable *cancellable,
-                 gpointer user_data)
+static void
+load_font_infos (GTask *task,
+                 gpointer source_object,
+                 gpointer user_data,
+                 GCancellable *cancellable)
 {
-    FontViewModel *self = user_data;
-    LoadFontInfosData *data;
+    FontViewModel *self = FONT_VIEW_MODEL (source_object);
     gint i, n_fonts;
     GList *font_infos = NULL;
-
-    if (g_cancellable_is_cancelled (cancellable))
-        return FALSE;
 
     n_fonts = self->priv->font_list->nfont;
 
     for (i = 0; i < n_fonts; i++) {
         FontInfoData *font_info;
         FcChar8 *file;
+        int index;
         gchar *font_name;
 
         if (g_cancellable_is_cancelled (cancellable))
@@ -428,9 +445,12 @@ load_font_infos (GIOSchedulerJob *job,
 
         g_mutex_lock (&self->priv->font_list_mutex);
         FcPatternGetString (self->priv->font_list->fonts[i], FC_FILE, 0, &file);
+        FcPatternGetInteger (self->priv->font_list->fonts[i], FC_INDEX, 0, &index);
         g_mutex_unlock (&self->priv->font_list_mutex);
 
-        font_name = font_utils_get_font_name_for_file (self->priv->library, (const gchar *) file);
+        font_name = font_utils_get_font_name_for_file (self->priv->library,
+                                                       (const gchar *) file,
+                                                       index);
 
         if (!font_name)
             continue;
@@ -438,21 +458,12 @@ load_font_infos (GIOSchedulerJob *job,
         font_info = g_slice_new0 (FontInfoData);
         font_info->font_name = font_name;
         font_info->font_path = g_strdup ((const gchar *) file);
+        font_info->face_index = index;
 
         font_infos = g_list_prepend (font_infos, font_info);
     }
 
-    data = g_slice_new0 (LoadFontInfosData);
-    data->self = g_object_ref (self);
-    data->font_infos = font_infos;
-
-    if (g_cancellable_is_cancelled (cancellable))
-        load_font_infos_data_free (data);
-    else
-        g_io_scheduler_job_send_to_mainloop_async (job, font_infos_loaded,
-                                                   data, load_font_infos_data_free);
-
-    return FALSE;
+    g_task_return_pointer (task, font_infos, NULL);
 }
 
 /* make sure the font list is valid */
@@ -461,6 +472,7 @@ ensure_font_list (FontViewModel *self)
 {
     FcPattern *pat;
     FcObjectSet *os;
+    GTask *task;
 
     /* always reinitialize the font database */
     if (!FcInitReinitialize())
@@ -474,7 +486,7 @@ ensure_font_list (FontViewModel *self)
     gtk_list_store_clear (GTK_LIST_STORE (self));
 
     pat = FcPatternCreate ();
-    os = FcObjectSetBuild (FC_FILE, FC_FAMILY, FC_WEIGHT, FC_SLANT, NULL);
+    os = FcObjectSetBuild (FC_FILE, FC_INDEX, FC_FAMILY, FC_WEIGHT, FC_SLANT, NULL);
 
     g_mutex_lock (&self->priv->font_list_mutex);
 
@@ -494,8 +506,10 @@ ensure_font_list (FontViewModel *self)
         return;
 
     self->priv->cancellable = g_cancellable_new ();
-    g_io_scheduler_push_job (load_font_infos, self, NULL,
-                             G_PRIORITY_DEFAULT, self->priv->cancellable);
+
+    task = g_task_new (self, self->priv->cancellable, font_infos_loaded, NULL);
+    g_task_set_return_on_cancel (task, TRUE);
+    g_task_run_in_thread (task, load_font_infos);
 }
 
 static gboolean
@@ -589,7 +603,7 @@ static void
 font_view_model_init (FontViewModel *self)
 {
     GType types[NUM_COLUMNS] =
-        { G_TYPE_STRING, G_TYPE_STRING, CAIRO_GOBJECT_TYPE_SURFACE, G_TYPE_STRING };
+        { G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INT, CAIRO_GOBJECT_TYPE_SURFACE, G_TYPE_STRING };
 
     self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, FONT_VIEW_TYPE_MODEL, FontViewModelPrivate);
 

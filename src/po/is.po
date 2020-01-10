@@ -1,27 +1,22 @@
-# translation of gnome-utils.HEAD.ar.po to Arabic
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
-# Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
-# Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
-# Djihed Afifi <djihed@gmail.com>, 2006.
-# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2008, 2010, 2011, 2012, 2013, 2014, 2015.
-# Anas Afif Emad <anas.e87@gmail.com, 2008.
+#
+# Sveinn í Felli <sv1@fellsnet.is>, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-utils.gnome-2-16.ar\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-23 22:02+0200\n"
-"PO-Revision-Date: 2015-03-23 22:03+0200\n"
-"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
-"Language: ar\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"font-viewer&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-03-25 07:58+0000\n"
+"PO-Revision-Date: 2015-04-09 11:05+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Virtaal 0.7.1\n"
-"X-Project-Style: gnome\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: ../data/org.gnome.font-viewer.appdata.xml.in.h:1
 msgid ""
@@ -29,6 +24,9 @@ msgid ""
 "use as thumbnails. Selecting any thumbnails shows the full view of how the "
 "font would look under various sizes."
 msgstr ""
+"GNOME leturskoðarinn sýnir þér sem smámyndir það letur sem uppsett er á "
+"kerfinu þínu. Ef þú velur einhverja smámyndina geturðu séð hvernig letrið "
+"lítur út í mismunandi stærðum."
 
 #: ../data/org.gnome.font-viewer.appdata.xml.in.h:2
 msgid ""
@@ -36,137 +34,123 @@ msgid ""
 "ttf and other formats. Fonts may be installed only for your use or made "
 "available to all users on the computer."
 msgstr ""
+"GNOME leturskoðarinn styður einnig að setja inn nýjar leturskrár sem þú hefur "
+"náð í á .ttf og fleiri sniðum. Letrið má setja upp fyrir þig einan eða fyrir "
+"alla notendur á tölvunni."
 
 #: ../src/font-thumbnailer.c:189
 msgid "Text to thumbnail (default: Aa)"
-msgstr "النص الذي سيوضع في المصغرة (المبدئي: Aa)"
+msgstr "Texti í smámynd (sjálfgefið: Aa)"
 
 #: ../src/font-thumbnailer.c:189
 msgid "TEXT"
-msgstr "نص"
+msgstr "TEXTI"
 
 #: ../src/font-thumbnailer.c:191
 msgid "Thumbnail size (default: 128)"
-msgstr "حجم المصغرة (المبدئي: 128)"
+msgstr "Stærð smámyndar (sjálfgefið: 128)"
 
 #: ../src/font-thumbnailer.c:191
 msgid "SIZE"
-msgstr "SIZE"
+msgstr "STÆRÐ"
 
 #: ../src/font-thumbnailer.c:193
 msgid "FONT-FILE OUTPUT-FILE"
-msgstr "FONT-FILE OUTPUT-FILE"
+msgstr "LETURSKRÁ ÚTTAKSSKRÁ"
 
 #: ../src/font-view-app-menu.ui.h:1
 msgid "About"
-msgstr "عنْ"
+msgstr "Um hugbúnaðinn"
 
 #: ../src/font-view-app-menu.ui.h:2
 msgid "Quit"
-msgstr "أنهِ"
+msgstr "Hætta"
 
 #: ../src/font-view.c:76
 msgid "GNOME Font Viewer"
-msgstr "عارض خطوط جنوم"
+msgstr "GNOME leturskoðari"
 
 #: ../src/font-view.c:84
 msgid "Show the application's version"
-msgstr ""
+msgstr "Birta útgáfuupplýsingar forrits"
 
 #: ../src/font-view.c:196
 msgid "Name"
-msgstr "الاسم"
+msgstr "Heiti"
 
 #: ../src/font-view.c:199
 msgid "Style"
-msgstr "الطراز"
+msgstr "Stíll"
 
 #: ../src/font-view.c:209
 msgid "Type"
-msgstr "النوع"
+msgstr "Gerð"
 
 #: ../src/font-view.c:254 ../src/font-view.c:273
 msgid "Version"
-msgstr "الإصدارة"
+msgstr "Útgáfa"
 
 #: ../src/font-view.c:259 ../src/font-view.c:279
 msgid "Copyright"
-msgstr "حقوق النشر"
+msgstr "Höfundarréttur"
 
 #: ../src/font-view.c:264
 msgid "Description"
-msgstr "الوصف"
+msgstr "Lýsing"
 
 #: ../src/font-view.c:295
 msgid "Install Failed"
-msgstr "فشل التّثبيت"
+msgstr "Uppsetning mistókst"
 
 #: ../src/font-view.c:302
 msgid "Installed"
-msgstr "مثبَّت"
+msgstr "Uppsett"
 
 #: ../src/font-view.c:306 ../src/font-view.c:551
 msgid "Install"
-msgstr "ثبّت"
+msgstr "Setja inn"
 
 #: ../src/font-view.c:440
 msgid "This font could not be displayed."
-msgstr "تعذّر عرض هذا الخط."
+msgstr "Ekki tókst að birta þetta letur."
 
 #: ../src/font-view.c:504 ../src/font-view.c:562
 msgid "Info"
-msgstr "معلومات"
+msgstr "Upplýsingar"
 
 #: ../src/font-view.c:579
 msgid "Back"
-msgstr "السابق"
+msgstr "Til baka"
 
 #: ../src/font-view.c:669
 msgid "All Fonts"
-msgstr "كل الخطوط"
+msgstr "Allt letur"
 
 #: ../src/font-view.c:787 ../src/org.gnome.font-viewer.desktop.in.in.h:1
 msgid "Font Viewer"
-msgstr "عارض الخطوط"
+msgstr "Leturskoðari"
 
 #: ../src/font-view.c:788 ../src/org.gnome.font-viewer.desktop.in.in.h:2
 msgid "View fonts on your system"
-msgstr "اعرض الخطوط على نظامك"
+msgstr "Skoða letur á kerfinu þínu"
 
 #: ../src/font-view.c:790
 msgid "translator-credits"
-msgstr ""
-"فريق عربآيز للترجمة http://arabeyes.org:\n"
-"خالد حسني <khaledhosny@eglug.org>"
+msgstr "Sveinn í Felli, sv1@fellsnet.is"
 
 #: ../src/font-view.c:929
 msgid "[FILE...]"
-msgstr ""
+msgstr "[SKRÁ...]"
 
 #. I18N: The '%s' is replaced with the command name.
 #: ../src/font-view.c:937
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
+"Keyrðu '%s --help' til að sjá lista með öllum mögulegum valkostum "
+"skipanalínunnar."
 
 #: ../src/org.gnome.font-viewer.desktop.in.in.h:3
 msgid "fonts;fontface;"
-msgstr "خط;خطوط;"
+msgstr "Letur;Leturgerð;"
 
-#~ msgid "_Close"
-#~ msgstr "أ_غلق"
-
-#~ msgid "About Font Viewer"
-#~ msgstr "عن عارض الخطوط"
-
-#~ msgid "Font size (default: 64)"
-#~ msgstr "Font size (default: 64)"
-
-#~ msgid "Size:"
-#~ msgstr "الحجم:"
-
-#~ msgid "Usage: %s fontfile\n"
-#~ msgstr "طريقة الاستخدام: %s ملف الخط\n"
-
-#~ msgid "Preview fonts"
-#~ msgstr "عاين الخطوط"
